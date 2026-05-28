@@ -1,10 +1,13 @@
 const cors = require('cors')
 const crypto = require('crypto')
 const express = require('express')
+const fs = require('fs')
+const path = require('path')
 const db = require('./db')
 
 const app = express()
 const port = process.env.PORT || 3000
+const frontendDistPath = path.resolve(__dirname, '..', '..', 'frontend', 'dist')
 
 app.use(cors())
 app.use(express.json())
@@ -276,6 +279,14 @@ app.get('/api/analysis/overview', (req, res) => {
     domainStats
   })
 })
+
+if (fs.existsSync(frontendDistPath)) {
+  app.use(express.static(frontendDistPath))
+
+  app.get(/^(?!\/api).*/, (req, res) => {
+    res.sendFile(path.join(frontendDistPath, 'index.html'))
+  })
+}
 
 app.listen(port, () => {
   console.log(`WAS practice API running on http://localhost:${port}`)
