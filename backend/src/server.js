@@ -42,12 +42,31 @@ app.post('/api/attempts', (req, res) => {
   const attemptId = crypto.randomUUID()
   const now = new Date().toISOString()
 
-  const allQuestionIds = db
-    .prepare('SELECT id FROM question_bank ORDER BY RANDOM()')
-    .all()
-    .map((row) => row.id)
+  // Select questions proportional to WAS content outline domain weights:
+  // 40% Creating, 40% Identifying, 20% Remediating → 30 / 30 / 15 of 75
+  const DOMAIN_TARGETS = [
+    { domain: 'Creating Accessible Web Solutions', count: 30 },
+    { domain: 'Identifying Accessibility Issues', count: 30 },
+    { domain: 'Remediating Issues', count: 15 }
+  ]
 
-  if (allQuestionIds.length === 0) {
+  const selectFromDomain = db.prepare(
+    'SELECT id FROM question_bank WHERE domain = ? ORDER BY RANDOM() LIMIT ?'
+  )
+
+  let poolIds = []
+  for (const { domain, count } of DOMAIN_TARGETS) {
+    const rows = selectFromDomain.all(domain, count)
+    poolIds.push(...rows.map((r) => r.id))
+  }
+
+  // Fisher-Yates shuffle so questions from different domains are interleaved
+  for (let i = poolIds.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[poolIds[i], poolIds[j]] = [poolIds[j], poolIds[i]]
+  }
+
+  if (poolIds.length === 0) {
     return res.status(500).json({ error: 'Question bank is empty.' })
   }
 
@@ -60,7 +79,7 @@ app.post('/api/attempts', (req, res) => {
 
   const tx = db.transaction(() => {
     createAttempt.run(attemptId, now)
-    allQuestionIds.forEach((questionId, sequence) => {
+    poolIds.forEach((questionId, sequence) => {
       assignQuestion.run(attemptId, sequence, questionId)
     })
   })
@@ -69,7 +88,7 @@ app.post('/api/attempts', (req, res) => {
 
   return res.status(201).json({
     attemptId,
-    questionCount: allQuestionIds.length,
+    questionCount: poolIds.length,
     startedAt: now
   })
 })
