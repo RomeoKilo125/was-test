@@ -10,8 +10,8 @@ const index = ref(0)
 const total = ref(0)
 const selectedOption = ref(null)
 const submitted = ref(false)
-const answerFeedback = ref(null)
 const summary = ref(null)
+const review = ref(null)
 const analysis = ref(null)
 const loading = ref(false)
 const error = ref('')
@@ -61,6 +61,7 @@ async function startPracticeTest() {
   error.value = ''
   loading.value = true
   summary.value = null
+  review.value = null
   analysis.value = null
 
   try {
@@ -88,7 +89,6 @@ async function loadQuestion(nextIndex) {
   index.value = payload.index
   selectedOption.value = payload.existingResponse
   submitted.value = payload.existingResponse !== null
-  answerFeedback.value = null
 }
 
 async function submitResponse() {
@@ -100,7 +100,7 @@ async function submitResponse() {
   error.value = ''
 
   try {
-    const result = await requestJson(`/api/attempts/${attemptId.value}/responses`, {
+    await requestJson(`/api/attempts/${attemptId.value}/responses`, {
       method: 'POST',
       body: JSON.stringify({
         questionId: question.value.id,
@@ -109,7 +109,6 @@ async function submitResponse() {
     })
 
     submitted.value = true
-    answerFeedback.value = result
   } catch (err) {
     error.value = err.message
   } finally {
@@ -129,6 +128,7 @@ async function nextStep() {
   try {
     if (isLast) {
       summary.value = await requestJson(`/api/attempts/${attemptId.value}/summary`)
+      review.value = await requestJson(`/api/attempts/${attemptId.value}/review`)
       analysis.value = await requestJson('/api/analysis/overview')
       question.value = null
       stopTimer()
@@ -190,12 +190,6 @@ onBeforeUnmount(() => {
           {{ index + 1 >= total ? 'Finish Exam' : 'Next Question' }}
         </button>
       </div>
-
-      <article v-if="submitted && answerFeedback" class="feedback" :class="answerFeedback.isCorrect ? 'correct' : 'incorrect'">
-        <h3>{{ answerFeedback.isCorrect ? 'Correct' : 'Not quite' }}</h3>
-        <p>{{ question.explanation }}</p>
-        <p><strong>Reference:</strong> {{ question.resource }}</p>
-      </article>
     </section>
 
     <section v-else-if="summary" class="card">
@@ -217,6 +211,29 @@ onBeforeUnmount(() => {
       </p>
 
       <button :disabled="loading" @click="startPracticeTest">Take Another Attempt</button>
+
+      <section v-if="review" class="review">
+        <h3>Question Review</h3>
+        <ol class="review-list">
+          <li v-for="item in review.items" :key="item.sequence" class="review-item" :class="item.isCorrect ? 'review-correct' : 'review-incorrect'">
+            <p class="review-stem"><strong>{{ item.sequence + 1 }}. {{ item.stem }}</strong></p>
+            <ul class="review-options">
+              <li
+                v-for="(option, optionIndex) in item.options"
+                :key="optionIndex"
+                :class="{
+                  'review-option-correct': optionIndex === item.correctOption,
+                  'review-option-selected': optionIndex === item.selectedOption && optionIndex !== item.correctOption
+                }"
+              >
+                {{ option }}
+              </li>
+            </ul>
+            <p class="review-explanation">{{ item.explanation }}</p>
+            <p class="review-resource"><strong>Reference:</strong> {{ item.resource }}</p>
+          </li>
+        </ol>
+      </section>
     </section>
   </main>
 </template>

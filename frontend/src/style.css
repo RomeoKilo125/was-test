@@ -107,3 +107,69 @@ button:disabled {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+.review {
+  margin-top: 1.5rem;
+}
+
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.review-item {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.review-correct {
+  background: #ecfdf5;
+  border-color: #86efac;
+}
+
+.review-incorrect {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.review-stem {
+  margin: 0 0 0.5rem;
+}
+
+.review-options {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.review-options li {
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+}
+
+.review-option-correct {
+  background: #d1fae5;
+  font-weight: 600;
+}
+
+.review-option-selected {
+  background: #fee2e2;
+  text-decoration: line-through;
+}
+
+.review-explanation {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.review-resource {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #374151;
+}
