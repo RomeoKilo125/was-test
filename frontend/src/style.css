@@ -97,6 +97,36 @@ button:disabled {
   padding: 0.75rem;
 }
 
+.review {
+  margin-top: 1.5rem;
+}
+
+.review-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.review-options {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.review-options li {
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+}
+
+.review-options li.correct-answer {
+  background: #d1fae5;
+  font-weight: 600;
+}
+
+.review-options li.selected:not(.correct-answer) {
+  background: #fee2e2;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -106,70 +136,4 @@ button:disabled {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-.review {
-  margin-top: 1.5rem;
-}
-
-.review-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.review-item {
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-}
-
-.review-correct {
-  background: #ecfdf5;
-  border-color: #86efac;
-}
-
-.review-incorrect {
-  background: #fef2f2;
-  border-color: #fca5a5;
-}
-
-.review-stem {
-  margin: 0 0 0.5rem;
-}
-
-.review-options {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0.5rem;
-  display: grid;
-  gap: 0.25rem;
-}
-
-.review-options li {
-  padding: 0.35rem 0.5rem;
-  border-radius: 4px;
-}
-
-.review-option-correct {
-  background: #d1fae5;
-  font-weight: 600;
-}
-
-.review-option-selected {
-  background: #fee2e2;
-  text-decoration: line-through;
-}
-
-.review-explanation {
-  margin: 0.5rem 0 0.25rem;
-  font-size: 0.95rem;
-}
-
-.review-resource {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #374151;
 }

@@ -210,30 +210,36 @@ onBeforeUnmount(() => {
         Accuracy: {{ analysis.accuracy === null ? 'N/A' : `${analysis.accuracy}%` }}
       </p>
 
-      <button :disabled="loading" @click="startPracticeTest">Take Another Attempt</button>
-
       <section v-if="review" class="review">
         <h3>Question Review</h3>
-        <ol class="review-list">
-          <li v-for="item in review.items" :key="item.sequence" class="review-item" :class="item.isCorrect ? 'review-correct' : 'review-incorrect'">
-            <p class="review-stem"><strong>{{ item.sequence + 1 }}. {{ item.stem }}</strong></p>
-            <ul class="review-options">
-              <li
-                v-for="(option, optionIndex) in item.options"
-                :key="optionIndex"
-                :class="{
-                  'review-option-correct': optionIndex === item.correctOption,
-                  'review-option-selected': optionIndex === item.selectedOption && optionIndex !== item.correctOption
-                }"
-              >
-                {{ option }}
-              </li>
-            </ul>
-            <p class="review-explanation">{{ item.explanation }}</p>
-            <p class="review-resource"><strong>Reference:</strong> {{ item.resource }}</p>
-          </li>
-        </ol>
+        <article
+          v-for="item in review.questions"
+          :key="item.id"
+          class="feedback"
+          :class="item.isCorrect === null ? '' : item.isCorrect ? 'correct' : 'incorrect'"
+        >
+          <p class="review-meta">Q{{ item.sequence + 1 }} · {{ item.domain }}</p>
+          <p><strong>{{ item.stem }}</strong></p>
+          <ul class="review-options">
+            <li
+              v-for="(option, i) in item.options"
+              :key="i"
+              :class="{
+                'selected': i === item.selectedOption,
+                'correct-answer': i === item.correctOption
+              }"
+            >
+              {{ option }}
+              <span v-if="i === item.correctOption"> ✓</span>
+              <span v-else-if="i === item.selectedOption && !item.isCorrect"> ✗</span>
+            </li>
+          </ul>
+          <p>{{ item.explanation }}</p>
+          <p><strong>Reference:</strong> {{ item.resource }}</p>
+        </article>
       </section>
+
+      <button :disabled="loading" @click="startPracticeTest">Take Another Attempt</button>
     </section>
   </main>
 </template>

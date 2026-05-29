@@ -239,12 +239,11 @@ app.get('/api/attempts/:attemptId/summary', (req, res) => {
 
 app.get('/api/attempts/:attemptId/review', (req, res) => {
   const { attemptId } = req.params
-  const attempt = getAttemptOr404(res, attemptId)
-  if (!attempt) {
+  if (!getAttemptOr404(res, attemptId)) {
     return
   }
 
-  const items = db
+  const rows = db
     .prepare(
       `
       SELECT
@@ -260,7 +259,7 @@ app.get('/api/attempts/:attemptId/review', (req, res) => {
         r.is_correct
       FROM attempt_questions aq
       JOIN question_bank qb ON qb.id = aq.question_id
-      LEFT JOIN responses r ON r.attempt_id = aq.attempt_id AND r.question_id = aq.question_id
+      LEFT JOIN responses r ON r.attempt_id = aq.attempt_id AND r.question_id = qb.id
       WHERE aq.attempt_id = ?
       ORDER BY aq.sequence
     `
@@ -273,13 +272,13 @@ app.get('/api/attempts/:attemptId/review', (req, res) => {
       stem: row.stem,
       options: JSON.parse(row.options_json),
       correctOption: row.correct_option,
-      selectedOption: row.selected_option !== null ? row.selected_option : null,
-      isCorrect: row.is_correct !== null ? Boolean(row.is_correct) : null,
+      selectedOption: row.selected_option,
+      isCorrect: row.selected_option !== null ? Boolean(row.is_correct) : null,
       explanation: row.explanation,
       resource: row.resource
     }))
 
-  return res.json({ attemptId, items })
+  return res.json({ attemptId, questions: rows })
 })
 
 app.get('/api/analysis/overview', (req, res) => {
