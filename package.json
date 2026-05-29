@@ -1,0 +1,22 @@
+{
+  "name": "was-practice-test",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Full-stack WAS practice test app",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev --workspace backend\" \"VITE_API_BASE=http://localhost:3000 npm run dev --workspace frontend -- --host 0.0.0.0\"",
+    "build": "npm run build --workspace frontend",
+    "start": "npm run start --workspace backend",
+    "test": "npm test --workspace backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

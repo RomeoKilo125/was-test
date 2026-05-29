@@ -15,10 +15,32 @@ The practice bank is aligned to IAAP WAS body-of-knowledge themes (foundations, 
 
 ## Run locally
 
+### Root project commands
+
+From the repository root:
+
+```bash
+npm install
+npm run dev
+```
+
+- `npm install` installs root, frontend, and backend dependencies through npm workspaces.
+- `npm run dev` starts both the Express API and the Vue dev server together.
+
+For a production-style local run:
+
+```bash
+npm install
+npm run build
+npm start
+```
+
+That builds the Vue app and serves it from the Express server on `http://localhost:3000`.
+
 ### 1) Start API
 
 ```bash
-cd /tmp/workspace/RomeoKilo125/was-test/backend
+cd backend
 npm install
 npm run dev
 ```
@@ -28,12 +50,21 @@ API runs at `http://localhost:3000`.
 ### 2) Start frontend
 
 ```bash
-cd /tmp/workspace/RomeoKilo125/was-test/frontend
+cd frontend
 npm install
 npm run dev
 ```
 
-UI runs at `http://localhost:5173` and calls the backend at `http://localhost:3000`.
+UI runs at `http://localhost:5173`. For standalone frontend development, set `VITE_API_BASE=http://localhost:3000`.
+
+## Render deployment
+
+This repository is set up for a single-service deployment.
+
+- **Build command:** `npm install && npm run build`
+- **Start command:** `npm start`
+
+Render can deploy from the repository root, build the Vue frontend, and run the Express backend, which serves the built frontend from `frontend/dist`.
 
 ## API summary
 

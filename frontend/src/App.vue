@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onBeforeUnmount, ref } from 'vue'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3000'
+const API_BASE = (import.meta.env.VITE_API_BASE || '').replace(/\/$/, '')
 const EXAM_DURATION_MINUTES = 120
 
 const attemptId = ref(null)
