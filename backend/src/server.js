@@ -237,6 +237,50 @@ app.get('/api/attempts/:attemptId/summary', (req, res) => {
   })
 })
 
+app.get('/api/attempts/:attemptId/review', (req, res) => {
+  const { attemptId } = req.params
+  if (!getAttemptOr404(res, attemptId)) {
+    return
+  }
+
+  const rows = db
+    .prepare(
+      `
+      SELECT
+        aq.sequence,
+        qb.id,
+        qb.domain,
+        qb.stem,
+        qb.options_json,
+        qb.correct_option,
+        qb.explanation,
+        qb.resource,
+        r.selected_option,
+        r.is_correct
+      FROM attempt_questions aq
+      JOIN question_bank qb ON qb.id = aq.question_id
+      LEFT JOIN responses r ON r.attempt_id = aq.attempt_id AND r.question_id = qb.id
+      WHERE aq.attempt_id = ?
+      ORDER BY aq.sequence
+    `
+    )
+    .all(attemptId)
+    .map((row) => ({
+      sequence: row.sequence,
+      id: row.id,
+      domain: row.domain,
+      stem: row.stem,
+      options: JSON.parse(row.options_json),
+      correctOption: row.correct_option,
+      selectedOption: row.selected_option,
+      isCorrect: row.selected_option !== null ? Boolean(row.is_correct) : null,
+      explanation: row.explanation,
+      resource: row.resource
+    }))
+
+  return res.json({ attemptId, questions: rows })
+})
+
 app.get('/api/analysis/overview', (req, res) => {
   const overall = db
     .prepare(
