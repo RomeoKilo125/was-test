@@ -34,8 +34,8 @@ function shouldResetSchema() {
     return true
   }
 
-  const sampleIds = db.prepare('SELECT id FROM question_bank LIMIT 20').all()
-  return sampleIds.some((row) => typeof row.id === 'string' && /^[0-9a-f]{16}$/i.test(row.id))
+  const questionIds = db.prepare('SELECT id FROM question_bank').all()
+  return questionIds.some((row) => typeof row.id === 'string' && /^[0-9a-f]{16}$/i.test(row.id))
 }
 
 if (shouldResetSchema()) {
@@ -99,30 +99,32 @@ for (const row of questions) {
   seenKeys.add(row.key)
 }
 
-const existingIds = new Set(db.prepare('SELECT id FROM question_bank').all().map((row) => row.id))
-const missingQuestions = questions.filter((row) => !existingIds.has(row.key))
+const upsert = db.prepare(`
+  INSERT INTO question_bank (id, domain, stem, options_json, correct_option, explanation, resource)
+  VALUES (?, ?, ?, ?, ?, ?, ?)
+  ON CONFLICT(id) DO UPDATE SET
+    domain = excluded.domain,
+    stem = excluded.stem,
+    options_json = excluded.options_json,
+    correct_option = excluded.correct_option,
+    explanation = excluded.explanation,
+    resource = excluded.resource
+`)
 
-if (missingQuestions.length > 0) {
-  const insert = db.prepare(`
-    INSERT INTO question_bank (id, domain, stem, options_json, correct_option, explanation, resource)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-  `)
+const tx = db.transaction((rows) => {
+  for (const row of rows) {
+    upsert.run(
+      row.key,
+      row.domain,
+      row.stem,
+      JSON.stringify(row.options),
+      row.correctOption,
+      row.explanation,
+      row.resource
+    )
+  }
+})
 
-  const tx = db.transaction((rows) => {
-    for (const row of rows) {
-      insert.run(
-        row.key,
-        row.domain,
-        row.stem,
-        JSON.stringify(row.options),
-        row.correctOption,
-        row.explanation,
-        row.resource
-      )
-    }
-  })
-
-  tx(missingQuestions)
-}
+tx(questions)
 
 module.exports = db
