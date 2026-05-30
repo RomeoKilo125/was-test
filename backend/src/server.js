@@ -141,8 +141,8 @@ app.post('/api/attempts/:attemptId/responses', (req, res) => {
     return
   }
 
-  if (!Number.isInteger(questionId) || !Number.isInteger(selectedOption)) {
-    return res.status(400).json({ error: 'questionId and selectedOption must be integers.' })
+  if (typeof questionId !== 'string' || !questionId || !Number.isInteger(selectedOption)) {
+    return res.status(400).json({ error: 'questionId must be a non-empty string and selectedOption must be an integer.' })
   }
 
   const question = db
