@@ -50,50 +50,60 @@ db.exec(`
   );
 `)
 
-// Migrate any legacy domain names to the three WAS content outline domains.
-// Runs at startup whenever legacy names are detected so the DB stays current
-// as new questions arrive from other agents.
-const legacyCount = db
-  .prepare(
-    `SELECT COUNT(*) as cnt FROM question_bank
-     WHERE domain NOT IN (
-       'Creating Accessible Web Solutions',
-       'Identifying Accessibility Issues',
-       'Remediating Issues'
-     )`
-  )
-  .get().cnt
+function normalizeDomain(domain, stem) {
+  if (stem.includes('color') && stem.includes('required fields')) {
+    return 'Identifying Accessibility Issues'
+  }
 
-if (legacyCount > 0) {
-  db.transaction(() => {
-    // Bulk remap old category names
-    db.prepare(
-      `UPDATE question_bank SET domain = 'Creating Accessible Web Solutions'
-       WHERE domain IN ('Accessibility Foundations', 'Standards and Laws', 'Design and UX', 'Development Techniques')`
-    ).run()
-    db.prepare(
-      `UPDATE question_bank SET domain = 'Identifying Accessibility Issues'
-       WHERE domain = 'Testing and QA'`
-    ).run()
-    db.prepare(
-      `UPDATE question_bank SET domain = 'Remediating Issues'
-       WHERE domain = 'Program Management'`
-    ).run()
-    // Per-question corrections for items bulk-moved to the wrong domain above
-    db.prepare(
-      `UPDATE question_bank SET domain = 'Identifying Accessibility Issues'
-       WHERE stem LIKE '%color%required fields%'`
-    ).run()
-    db.prepare(
-      `UPDATE question_bank SET domain = 'Remediating Issues'
-       WHERE stem LIKE '%map product requirements to WCAG%'`
-    ).run()
-    db.prepare(
-      `UPDATE question_bank SET domain = 'Remediating Issues'
-       WHERE stem LIKE '%VPAT%'`
-    ).run()
-  })()
+  if (stem.includes('map product requirements to WCAG')) {
+    return 'Remediating Issues'
+  }
+
+  if (stem.includes('VPAT')) {
+    return 'Remediating Issues'
+  }
+
+  if (
+    domain === 'Creating Accessible Web Solutions' ||
+    domain === 'Identifying Accessibility Issues' ||
+    domain === 'Remediating Issues'
+  ) {
+    return domain
+  }
+
+  if (
+    domain === 'Accessibility Foundations' ||
+    domain === 'Standards and Laws' ||
+    domain === 'Design and UX' ||
+    domain === 'Development Techniques'
+  ) {
+    return 'Creating Accessible Web Solutions'
+  }
+
+  if (domain === 'Testing and QA') {
+    return 'Identifying Accessibility Issues'
+  }
+
+  if (domain === 'Program Management') {
+    return 'Remediating Issues'
+  }
+
+  return domain
 }
+
+const updateDomain = db.prepare('UPDATE question_bank SET domain = ? WHERE id = ?')
+const reconcileDomains = db.transaction(() => {
+  const rows = db.prepare('SELECT id, domain, stem FROM question_bank').all()
+
+  for (const row of rows) {
+    const normalizedDomain = normalizeDomain(row.domain, row.stem)
+    if (normalizedDomain !== row.domain) {
+      updateDomain.run(normalizedDomain, row.id)
+    }
+  }
+})
+
+reconcileDomains()
 
 const existingStems = new Set(
   db.prepare('SELECT stem FROM question_bank').all().map((row) => row.stem)
@@ -109,7 +119,7 @@ if (missingQuestions.length > 0) {
   const tx = db.transaction((rows) => {
     for (const row of rows) {
       insert.run(
-        row.domain,
+        normalizeDomain(row.domain, row.stem),
         row.stem,
         JSON.stringify(row.options),
         row.correctOption,
