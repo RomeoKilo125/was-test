@@ -141,7 +141,7 @@ app.post('/api/attempts/:attemptId/responses', (req, res) => {
     return
   }
 
-  if (typeof questionId !== 'string' || !questionId || !Number.isInteger(selectedOption)) {
+  if (typeof questionId !== 'string' || !questionId.trim() || !Number.isInteger(selectedOption)) {
     return res.status(400).json({ error: 'questionId must be a non-empty string and selectedOption must be an integer.' })
   }
 
