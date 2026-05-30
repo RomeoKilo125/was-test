@@ -111,7 +111,7 @@ async function submitResponse() {
     })
 
     savedOption.value = selectedOption.value
-    setTimeout(() => nextStep(), 200)
+    await nextStep()
   } catch (err) {
     error.value = err.message
   } finally {
