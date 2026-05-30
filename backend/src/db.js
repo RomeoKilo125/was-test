@@ -50,8 +50,6 @@ db.exec(`
   );
 `)
 
-const count = db.prepare('SELECT COUNT(*) as total FROM question_bank').get().total
-
 // Migrate any legacy domain names to the three WAS content outline domains.
 // Runs at startup whenever legacy names are detected so the DB stays current
 // as new questions arrive from other agents.
@@ -97,7 +95,12 @@ if (legacyCount > 0) {
   })()
 }
 
-if (count === 0) {
+const existingStems = new Set(
+  db.prepare('SELECT stem FROM question_bank').all().map((row) => row.stem)
+)
+const missingQuestions = questions.filter((row) => !existingStems.has(row.stem))
+
+if (missingQuestions.length > 0) {
   const insert = db.prepare(`
     INSERT INTO question_bank (domain, stem, options_json, correct_option, explanation, resource)
     VALUES (?, ?, ?, ?, ?, ?)
@@ -116,7 +119,7 @@ if (count === 0) {
     }
   })
 
-  tx(questions)
+  tx(missingQuestions)
 }
 
 module.exports = db
