@@ -1,6 +1,7 @@
 const cors = require('cors')
 const crypto = require('crypto')
 const express = require('express')
+const rateLimit = require('express-rate-limit')
 const fs = require('fs')
 const path = require('path')
 const db = require('./db')
@@ -11,6 +12,13 @@ const frontendDistPath = path.resolve(__dirname, '..', '..', 'frontend', 'dist')
 
 app.use(cors())
 app.use(express.json())
+
+const submitResponseLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 120,
+  standardHeaders: 'draft-8',
+  legacyHeaders: false
+})
 
 function getAttemptOr404(res, attemptId) {
   const attempt = db.prepare('SELECT * FROM quiz_attempts WHERE id = ?').get(attemptId)
@@ -133,7 +141,7 @@ app.get('/api/attempts/:attemptId/questions/:index', (req, res) => {
   })
 })
 
-app.post('/api/attempts/:attemptId/responses', (req, res) => {
+app.post('/api/attempts/:attemptId/responses', submitResponseLimiter, (req, res) => {
   const { attemptId } = req.params
   const { questionId, selectedOption } = req.body
 
@@ -141,9 +149,10 @@ app.post('/api/attempts/:attemptId/responses', (req, res) => {
     return
   }
 
-  if (!Number.isInteger(questionId) || !Number.isInteger(selectedOption)) {
-    return res.status(400).json({ error: 'questionId and selectedOption must be integers.' })
+  if (typeof questionId !== 'string' || !questionId.trim() || !Number.isInteger(selectedOption)) {
+    return res.status(400).json({ error: 'questionId must be a non-empty string and selectedOption must be an integer.' })
   }
+  const normalizedQuestionId = questionId.trim()
 
   const question = db
     .prepare(
@@ -154,14 +163,14 @@ app.post('/api/attempts/:attemptId/responses', (req, res) => {
       WHERE qb.id = ? AND aq.attempt_id = ?
     `
     )
-    .get(questionId, attemptId)
+    .get(normalizedQuestionId, attemptId)
 
   if (!question) {
     return res.status(404).json({ error: 'Question not found in this attempt.' })
   }
 
   const optionsCount = JSON.parse(
-    db.prepare('SELECT options_json FROM question_bank WHERE id = ?').get(questionId).options_json
+    db.prepare('SELECT options_json FROM question_bank WHERE id = ?').get(normalizedQuestionId).options_json
   ).length
 
   if (selectedOption < 0 || selectedOption >= optionsCount) {
@@ -181,10 +190,10 @@ app.post('/api/attempts/:attemptId/responses', (req, res) => {
       is_correct = excluded.is_correct,
       answered_at = excluded.answered_at
   `
-  ).run(attemptId, questionId, selectedOption, isCorrect, answeredAt)
+  ).run(attemptId, normalizedQuestionId, selectedOption, isCorrect, answeredAt)
 
   return res.status(201).json({
-    questionId,
+    questionId: normalizedQuestionId,
     selectedOption,
     isCorrect: Boolean(isCorrect)
   })

@@ -10,10 +10,46 @@ if (!fs.existsSync(dataDir)) {
 
 const dbPath = path.join(dataDir, 'quiz.db')
 const db = new Database(dbPath)
+db.pragma('foreign_keys = ON')
+
+function shouldResetSchema() {
+  const hasQuestionBank = db
+    .prepare("SELECT 1 AS present FROM sqlite_master WHERE type = 'table' AND name = 'question_bank'")
+    .get()
+
+  if (!hasQuestionBank) {
+    return false
+  }
+
+  const idCol = db
+    .prepare('PRAGMA table_info(question_bank)')
+    .all()
+    .find((col) => col.name === 'id')
+
+  if (!idCol) {
+    return true
+  }
+
+  if (idCol.type && idCol.type.toUpperCase().includes('INT')) {
+    return true
+  }
+
+  const questionIds = db.prepare('SELECT id FROM question_bank').all()
+  return questionIds.some((row) => typeof row.id === 'string' && /^[0-9a-f]{16}$/i.test(row.id))
+}
+
+if (shouldResetSchema()) {
+  db.exec(`
+    DROP TABLE IF EXISTS responses;
+    DROP TABLE IF EXISTS attempt_questions;
+    DROP TABLE IF EXISTS quiz_attempts;
+    DROP TABLE IF EXISTS question_bank;
+  `)
+}
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS question_bank (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id TEXT PRIMARY KEY,
     domain TEXT NOT NULL,
     stem TEXT NOT NULL,
     options_json TEXT NOT NULL,
@@ -31,7 +67,7 @@ db.exec(`
   CREATE TABLE IF NOT EXISTS attempt_questions (
     attempt_id TEXT NOT NULL,
     sequence INTEGER NOT NULL,
-    question_id INTEGER NOT NULL,
+    question_id TEXT NOT NULL,
     PRIMARY KEY (attempt_id, sequence),
     FOREIGN KEY (attempt_id) REFERENCES quiz_attempts(id),
     FOREIGN KEY (question_id) REFERENCES question_bank(id)
@@ -40,7 +76,7 @@ db.exec(`
   CREATE TABLE IF NOT EXISTS responses (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     attempt_id TEXT NOT NULL,
-    question_id INTEGER NOT NULL,
+    question_id TEXT NOT NULL,
     selected_option INTEGER NOT NULL,
     is_correct INTEGER NOT NULL,
     answered_at TEXT NOT NULL,
@@ -50,86 +86,45 @@ db.exec(`
   );
 `)
 
-function normalizeDomain(domain, stem) {
-  if (stem.includes('color') && stem.includes('required fields')) {
-    return 'Identifying Accessibility Issues'
+const seenKeys = new Set()
+for (const row of questions) {
+  if (typeof row.key !== 'string' || !row.key.trim()) {
+    throw new Error('Each question must include a non-empty key string.')
   }
 
-  if (stem.includes('map product requirements to WCAG')) {
-    return 'Remediating Issues'
+  if (seenKeys.has(row.key)) {
+    throw new Error(`Duplicate question key found: ${row.key}`)
   }
 
-  if (stem.includes('VPAT')) {
-    return 'Remediating Issues'
-  }
-
-  if (
-    domain === 'Creating Accessible Web Solutions' ||
-    domain === 'Identifying Accessibility Issues' ||
-    domain === 'Remediating Issues'
-  ) {
-    return domain
-  }
-
-  if (
-    domain === 'Accessibility Foundations' ||
-    domain === 'Standards and Laws' ||
-    domain === 'Design and UX' ||
-    domain === 'Development Techniques'
-  ) {
-    return 'Creating Accessible Web Solutions'
-  }
-
-  if (domain === 'Testing and QA') {
-    return 'Identifying Accessibility Issues'
-  }
-
-  if (domain === 'Program Management') {
-    return 'Remediating Issues'
-  }
-
-  return domain
+  seenKeys.add(row.key)
 }
 
-const updateDomain = db.prepare('UPDATE question_bank SET domain = ? WHERE id = ?')
-const reconcileDomains = db.transaction(() => {
-  const rows = db.prepare('SELECT id, domain, stem FROM question_bank').all()
+const upsert = db.prepare(`
+  INSERT INTO question_bank (id, domain, stem, options_json, correct_option, explanation, resource)
+  VALUES (?, ?, ?, ?, ?, ?, ?)
+  ON CONFLICT(id) DO UPDATE SET
+    domain = excluded.domain,
+    stem = excluded.stem,
+    options_json = excluded.options_json,
+    correct_option = excluded.correct_option,
+    explanation = excluded.explanation,
+    resource = excluded.resource
+`)
 
+const tx = db.transaction((rows) => {
   for (const row of rows) {
-    const normalizedDomain = normalizeDomain(row.domain, row.stem)
-    if (normalizedDomain !== row.domain) {
-      updateDomain.run(normalizedDomain, row.id)
-    }
+    upsert.run(
+      row.key,
+      row.domain,
+      row.stem,
+      JSON.stringify(row.options),
+      row.correctOption,
+      row.explanation,
+      row.resource
+    )
   }
 })
 
-reconcileDomains()
-
-const existingStems = new Set(
-  db.prepare('SELECT stem FROM question_bank').all().map((row) => row.stem)
-)
-const missingQuestions = questions.filter((row) => !existingStems.has(row.stem))
-
-if (missingQuestions.length > 0) {
-  const insert = db.prepare(`
-    INSERT INTO question_bank (domain, stem, options_json, correct_option, explanation, resource)
-    VALUES (?, ?, ?, ?, ?, ?)
-  `)
-
-  const tx = db.transaction((rows) => {
-    for (const row of rows) {
-      insert.run(
-        normalizeDomain(row.domain, row.stem),
-        row.stem,
-        JSON.stringify(row.options),
-        row.correctOption,
-        row.explanation,
-        row.resource
-      )
-    }
-  })
-
-  tx(missingQuestions)
-}
+tx(questions)
 
 module.exports = db
