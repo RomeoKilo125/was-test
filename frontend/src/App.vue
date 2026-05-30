@@ -133,7 +133,7 @@ async function goBack() {
 }
 
 async function nextStep() {
-  if (!attemptId.value || !isAnswered.value) {
+  if (!attemptId.value || !isAnswered.value || needsSubmit.value) {
     return
   }
 
@@ -205,7 +205,7 @@ onBeforeUnmount(() => {
         <button v-if="needsSubmit" :disabled="loading" @click="submitResponse">
           {{ loading ? 'Submitting…' : 'Submit Answer' }}
         </button>
-        <button v-if="isAnswered" :disabled="loading" @click="nextStep">
+        <button v-if="isAnswered && !needsSubmit" :disabled="loading" @click="nextStep">
           {{ index + 1 >= total ? 'Finish Exam' : 'Next →' }}
         </button>
       </div>
