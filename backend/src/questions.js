@@ -1,7 +1,7 @@
 module.exports = [
   // ── Accessibility Foundations ──────────────────────────────────────────────
   {
-    key: 'which-principle-from-wcag-requires-that-content-can-be-presented-in-di',
+    key: 'q001',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which principle from WCAG requires that content can be presented in different ways without losing meaning?',
     options: ['Operable', 'Perceivable', 'Understandable', 'Robust'],
@@ -10,7 +10,7 @@ module.exports = [
     resource: 'WCAG 2.2 Guideline 1.3 (Adaptable)'
   },
   {
-    key: 'what-is-the-best-definition-of-assistive-technology-at',
+    key: 'q002',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the best definition of assistive technology (AT)?',
     options: [
@@ -24,7 +24,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Disabilities and Assistive Technology'
   },
   {
-    key: 'a-user-can-only-complete-a-form-when-color-is-used-to-indicate-require',
+    key: 'q003',
     domain: 'Identifying Accessibility Issues',
     stem: 'A user can only complete a form when color is used to indicate required fields. Which WCAG requirement is most directly violated?',
     options: ['Use of Color', 'Pointer Gestures', 'Focus Visible', 'Page Titled'],
@@ -33,7 +33,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.1 (Use of Color)'
   },
   {
-    key: 'which-statement-best-describes-the-pour-framework',
+    key: 'q004',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which statement best describes the POUR framework?',
     options: [
@@ -47,7 +47,7 @@ module.exports = [
     resource: 'WCAG 2.2 Principles'
   },
   {
-    key: 'which-disability-category-is-most-associated-with-the-need-for-caption',
+    key: 'q005',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which disability category is most associated with the need for captions in prerecorded videos?',
     options: ['Auditory', 'Motor', 'Cognitive', 'Speech'],
@@ -56,7 +56,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.2.2 (Captions - Prerecorded)'
   },
   {
-    key: 'which-model-of-disability-focuses-on-societal-barriers-rather-than-ind',
+    key: 'q006',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which model of disability focuses on societal barriers rather than individual impairments?',
     options: ['Medical model', 'Charity model', 'Social model', 'Legal model'],
@@ -65,7 +65,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Conceptual Frameworks of Disability'
   },
   {
-    key: 'a-screen-reader-user-navigates-a-page-using-heading-levels-what-does-t',
+    key: 'q007',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A screen reader user navigates a page using heading levels. What does this approach rely on?',
     options: ['ARIA live regions', 'Semantic heading structure', 'CSS z-index order', 'Tab index values'],
@@ -74,7 +74,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.4.6 (Headings and Labels)'
   },
   {
-    key: 'which-disability-type-primarily-benefits-from-on-screen-keyboard-and-s',
+    key: 'q008',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which disability type primarily benefits from on-screen keyboard and switch access interfaces?',
     options: ['Auditory', 'Visual', 'Motor', 'Cognitive'],
@@ -83,7 +83,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Disabilities and Assistive Technology'
   },
   {
-    key: 'which-wcag-success-criterion-most-directly-addresses-the-need-for-audi',
+    key: 'q009',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG success criterion most directly addresses the need for audio description of video content?',
     options: [
@@ -97,7 +97,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.2.5 (Audio Description - Prerecorded)'
   },
   {
-    key: 'a-person-uses-voice-recognition-software-to-interact-with-a-web-applic',
+    key: 'q010',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A person uses voice recognition software to interact with a web application. Which accessibility aspect is most critical for this user?',
     options: ['Text contrast ratio', 'Visible and correctly labeled interactive controls', 'Caption quality', 'Font size'],
@@ -106,7 +106,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.5.3 (Label in Name)'
   },
   {
-    key: 'dyslexia-is-primarily-a-type-of',
+    key: 'q011',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Dyslexia is primarily a type of:',
     options: ['Visual disability', 'Motor disability', 'Cognitive/learning disability', 'Auditory disability'],
@@ -115,7 +115,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Cognitive Disabilities'
   },
   {
-    key: 'which-term-describes-temporary-impairments-such-as-a-broken-arm-or-a-n',
+    key: 'q012',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which term describes temporary impairments such as a broken arm or a noisy environment?',
     options: ['Permanent disability', 'Situational limitation', 'Transient disability', 'Episodic disability'],
@@ -124,7 +124,7 @@ module.exports = [
     resource: 'Microsoft Inclusive Design - Persona Spectrum'
   },
   {
-    key: 'which-html-attribute-provides-an-accessible-name-for-an-image',
+    key: 'q013',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which HTML attribute provides an accessible name for an image?',
     options: ['title', 'src', 'alt', 'longdesc'],
@@ -133,7 +133,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.1.1 (Non-text Content)'
   },
   {
-    key: 'a-wcag-conformance-level-of-aa-means',
+    key: 'q014',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A WCAG conformance level of "AA" means:',
     options: [
@@ -147,7 +147,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Conformance'
   },
   {
-    key: 'for-a-complex-data-chart-what-is-the-best-accessible-alternative',
+    key: 'q015',
     domain: 'Creating Accessible Web Solutions',
     stem: 'For a complex data chart, what is the best accessible alternative?',
     options: [
@@ -161,7 +161,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.1.1 (Non-text Content)'
   },
   {
-    key: 'which-assistive-technology-converts-on-screen-text-to-speech-using-a-s',
+    key: 'q016',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which assistive technology converts on-screen text to speech using a synthesizer?',
     options: ['Screen magnifier', 'Screen reader', 'Braille display', 'Switch access device'],
@@ -170,7 +170,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Assistive Technologies'
   },
   {
-    key: 'what-does-programmatic-determination-mean-in-the-context-of-wcag',
+    key: 'q017',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does "programmatic determination" mean in the context of WCAG?',
     options: [
@@ -184,7 +184,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.3.1 (Info and Relationships)'
   },
   {
-    key: 'a-user-with-low-vision-increases-browser-text-size-to-200-the-layout-b',
+    key: 'q018',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A user with low vision increases browser text size to 200%. The layout breaks and text overlaps. Which WCAG criterion is most relevant?',
     options: [
@@ -198,7 +198,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.4 (Resize Text)'
   },
   {
-    key: 'which-wcag-2-2-success-criterion-is-new-not-present-in-wcag-2-1-and-ad',
+    key: 'q019',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG 2.2 success criterion is new (not present in WCAG 2.1) and addresses dragging movements?',
     options: [
@@ -212,7 +212,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.5.7 (Dragging Movements)'
   },
   {
-    key: 'which-wcag-2-2-success-criterion-requires-that-the-target-size-for-poi',
+    key: 'q020',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG 2.2 success criterion requires that the target size for pointer inputs is at least 24×24 CSS pixels?',
     options: [
@@ -226,7 +226,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.5.8 (Target Size - Minimum)'
   },
   {
-    key: 'what-does-sufficient-contrast-mean-for-non-text-graphical-elements-und',
+    key: 'q021',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does "sufficient contrast" mean for non-text graphical elements under WCAG AA?',
     options: [
@@ -240,7 +240,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.11 (Non-text Contrast)'
   },
   {
-    key: 'a-decorative-image-should-have-its-alt-attribute-set-to',
+    key: 'q022',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A decorative image should have its alt attribute set to:',
     options: ['"decorative"', 'The image filename', 'An empty string (alt="")', 'The surrounding text repeated'],
@@ -249,7 +249,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.1.1 (Non-text Content)'
   },
   {
-    key: 'what-is-the-purpose-of-wcag-conformance-level-aaa',
+    key: 'q023',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the purpose of WCAG conformance level AAA?',
     options: [
@@ -263,7 +263,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Conformance Levels'
   },
   {
-    key: 'a-user-with-photosensitive-epilepsy-is-most-at-risk-from-content-that',
+    key: 'q024',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A user with photosensitive epilepsy is most at risk from content that:',
     options: [
@@ -277,7 +277,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.3.1 (Three Flashes or Below Threshold)'
   },
   {
-    key: 'which-of-the-following-best-describes-accessibility',
+    key: 'q025',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which of the following best describes "accessibility"?',
     options: [
@@ -291,7 +291,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Introduction to Accessibility'
   },
   {
-    key: 'the-robust-wcag-principle-primarily-ensures',
+    key: 'q026',
     domain: 'Creating Accessible Web Solutions',
     stem: 'The "Robust" WCAG principle primarily ensures:',
     options: [
@@ -305,7 +305,7 @@ module.exports = [
     resource: 'WCAG 2.2 Principle 4 (Robust)'
   },
   {
-    key: 'which-wcag-success-criterion-specifically-requires-that-the-purpose-of',
+    key: 'q027',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG success criterion specifically requires that the purpose of any input field collecting personal information can be programmatically determined?',
     options: [
@@ -319,7 +319,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.3.5 (Identify Input Purpose)'
   },
   {
-    key: 'which-type-of-hearing-loss-involves-difficulty-understanding-speech-ev',
+    key: 'q028',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which type of hearing loss involves difficulty understanding speech even when sound is audible?',
     options: ['Conductive hearing loss', 'Sensorineural hearing loss', 'Mixed hearing loss', 'Central auditory processing disorder'],
@@ -328,7 +328,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Auditory Disabilities'
   },
   {
-    key: 'what-does-wcag-sc-2-4-12-focus-not-obscured-enhanced-level-aaa-require',
+    key: 'q029',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does WCAG SC 2.4.12 (Focus Not Obscured - Enhanced, Level AAA) require that is stronger than SC 2.4.11 (Level AA)?',
     options: [
@@ -342,7 +342,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.4.12 (Focus Not Obscured - Enhanced)'
   },
   {
-    key: 'what-is-the-primary-purpose-of-an-accessibility-conformance-report-acr',
+    key: 'q030',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the primary purpose of an accessibility conformance report (ACR)?',
     options: [
@@ -356,7 +356,7 @@ module.exports = [
     resource: 'ITI VPAT / ACR Guidance'
   },
   {
-    key: 'which-of-the-following-best-describes-situational-disability',
+    key: 'q031',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which of the following best describes "situational disability"?',
     options: [
@@ -370,7 +370,7 @@ module.exports = [
     resource: 'Microsoft Inclusive Design - Persona Spectrum'
   },
   {
-    key: 'which-wcag-success-criterion-requires-that-content-does-not-restrict-i',
+    key: 'q032',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG success criterion requires that content does not restrict its view or operation to a single orientation (portrait or landscape)?',
     options: [
@@ -384,7 +384,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.3.4 (Orientation)'
   },
   {
-    key: 'a-webpage-has-auto-playing-background-audio-which-wcag-criterion-most-',
+    key: 'q033',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A webpage has auto-playing background audio. Which WCAG criterion most directly addresses this?',
     options: [
@@ -400,7 +400,7 @@ module.exports = [
 
   // ── Standards and Laws ────────────────────────────────────────────────────
   {
-    key: 'which-standard-is-the-primary-global-web-accessibility-standard-refere',
+    key: 'q034',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which standard is the primary global web accessibility standard referenced by many laws and policies?',
     options: ['ISO 9001', 'WCAG', 'PCI DSS', 'SOC 2'],
@@ -409,7 +409,7 @@ module.exports = [
     resource: 'W3C Web Content Accessibility Guidelines'
   },
   {
-    key: 'section-508-in-the-united-states-primarily-applies-to',
+    key: 'q035',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Section 508 in the United States primarily applies to:',
     options: [
@@ -423,7 +423,7 @@ module.exports = [
     resource: 'U.S. Section 508 Standards'
   },
   {
-    key: 'en-301-549-is-most-relevant-to-accessibility-requirements-in-which-reg',
+    key: 'q036',
     domain: 'Creating Accessible Web Solutions',
     stem: 'EN 301 549 is most relevant to accessibility requirements in which region?',
     options: ['European Union', 'Australia only', 'South America only', 'Global private equity firms'],
@@ -432,7 +432,7 @@ module.exports = [
     resource: 'EN 301 549 Accessibility Requirements'
   },
   {
-    key: 'what-is-the-best-reason-to-map-product-requirements-to-wcag-success-cr',
+    key: 'q037',
     domain: 'Remediating Issues',
     stem: 'What is the best reason to map product requirements to WCAG success criteria early?',
     options: [
@@ -446,7 +446,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility Program and Process Integration'
   },
   {
-    key: 'which-statement-about-vpat-acr-documentation-is-most-accurate',
+    key: 'q038',
     domain: 'Remediating Issues',
     stem: 'Which statement about VPAT/ACR documentation is most accurate?',
     options: [
@@ -460,7 +460,7 @@ module.exports = [
     resource: 'ITI VPAT Guidance'
   },
   {
-    key: 'which-u-s-law-prohibits-discrimination-against-people-with-disabilitie',
+    key: 'q039',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which U.S. law prohibits discrimination against people with disabilities in places of public accommodation and has been applied to websites by courts?',
     options: ['Section 508', 'Americans with Disabilities Act (ADA) Title III', 'CVAA', 'FISMA'],
@@ -469,7 +469,7 @@ module.exports = [
     resource: 'Americans with Disabilities Act (ADA) Title III'
   },
   {
-    key: 'the-21st-century-communications-and-video-accessibility-act-cvaa-appli',
+    key: 'q040',
     domain: 'Creating Accessible Web Solutions',
     stem: 'The 21st Century Communications and Video Accessibility Act (CVAA) applies to:',
     options: [
@@ -483,7 +483,7 @@ module.exports = [
     resource: 'FCC CVAA Guidance'
   },
   {
-    key: 'wcag-2-1-added-success-criteria-to-address-which-populations-not-fully',
+    key: 'q041',
     domain: 'Creating Accessible Web Solutions',
     stem: 'WCAG 2.1 added success criteria to address which populations not fully addressed in WCAG 2.0?',
     options: [
@@ -497,7 +497,7 @@ module.exports = [
     resource: 'WCAG 2.1 What\'s New'
   },
   {
-    key: 'how-many-new-success-criteria-did-wcag-2-2-add-compared-to-wcag-2-1',
+    key: 'q042',
     domain: 'Creating Accessible Web Solutions',
     stem: 'How many new success criteria did WCAG 2.2 add compared to WCAG 2.1?',
     options: ['3', '9', '17', '22'],
@@ -506,7 +506,7 @@ module.exports = [
     resource: 'WCAG 2.2 What\'s New'
   },
   {
-    key: 'which-wcag-success-criterion-was-removed-in-wcag-2-2',
+    key: 'q043',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG success criterion was removed in WCAG 2.2?',
     options: [
@@ -520,7 +520,7 @@ module.exports = [
     resource: 'WCAG 2.2 What\'s New'
   },
   {
-    key: 'the-accessibility-for-ontarians-with-disabilities-act-aoda-applies-to',
+    key: 'q044',
     domain: 'Creating Accessible Web Solutions',
     stem: 'The Accessibility for Ontarians with Disabilities Act (AODA) applies to:',
     options: ['All websites globally', 'Organizations in Ontario, Canada', 'Federal agencies in Canada only', 'EU member states'],
@@ -529,7 +529,7 @@ module.exports = [
     resource: 'AODA Web Accessibility Standards'
   },
   {
-    key: 'wai-aria-is-maintained-by-which-organization',
+    key: 'q045',
     domain: 'Creating Accessible Web Solutions',
     stem: 'WAI-ARIA is maintained by which organization?',
     options: ['IAAP', 'W3C Web Accessibility Initiative (WAI)', 'ISO', 'NIST'],
@@ -538,7 +538,7 @@ module.exports = [
     resource: 'W3C WAI-ARIA Specification'
   },
   {
-    key: 'which-document-provides-guidance-on-applying-wcag-to-non-web-ict-like-',
+    key: 'q046',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which document provides guidance on applying WCAG to non-web ICT like software and documents?',
     options: ['WAI-ARIA', 'ATAG', 'WCAG2ICT', 'UAAG'],
@@ -547,7 +547,7 @@ module.exports = [
     resource: 'W3C WCAG2ICT Guidance'
   },
   {
-    key: 'what-does-atag-stand-for-and-what-does-it-address',
+    key: 'q047',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does ATAG stand for and what does it address?',
     options: [
@@ -561,7 +561,7 @@ module.exports = [
     resource: 'W3C ATAG 2.0'
   },
   {
-    key: 'which-australian-standard-for-web-accessibility-references-wcag',
+    key: 'q048',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which Australian standard for web accessibility references WCAG?',
     options: ['AS ISO 9241', 'AS EN 301 549', 'APS Web Accessibility National Transition Strategy', 'Digital Service Standard'],
@@ -570,7 +570,7 @@ module.exports = [
     resource: 'Australian Government Digital Service Standard'
   },
   {
-    key: 'section-504-of-the-rehabilitation-act-requires-that',
+    key: 'q049',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Section 504 of the Rehabilitation Act requires that:',
     options: [
@@ -584,7 +584,7 @@ module.exports = [
     resource: 'Section 504, Rehabilitation Act of 1973'
   },
   {
-    key: 'which-standard-specifically-addresses-the-accessibility-of-user-agents',
+    key: 'q050',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which standard specifically addresses the accessibility of user agents (browsers and media players)?',
     options: ['WCAG', 'ATAG', 'UAAG', 'WAI-ARIA'],
@@ -593,7 +593,7 @@ module.exports = [
     resource: 'W3C UAAG 2.0'
   },
   {
-    key: 'the-european-accessibility-act-eaa-most-broadly-requires-that',
+    key: 'q051',
     domain: 'Creating Accessible Web Solutions',
     stem: 'The European Accessibility Act (EAA) most broadly requires that:',
     options: [
@@ -607,7 +607,7 @@ module.exports = [
     resource: 'European Accessibility Act (EAA) Directive 2019/882'
   },
   {
-    key: 'what-level-of-wcag-conformance-is-most-commonly-required-by-laws-and-r',
+    key: 'q052',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What level of WCAG conformance is most commonly required by laws and regulations worldwide?',
     options: ['Level A', 'Level AA', 'Level AAA', 'No specific level'],
@@ -616,7 +616,7 @@ module.exports = [
     resource: 'W3C Policies Relating to Web Accessibility'
   },
   {
-    key: 'a-conformance-claim-for-a-webpage-must-identify-which-of-the-following',
+    key: 'q053',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A conformance claim for a webpage must identify which of the following?',
     options: [
@@ -630,7 +630,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Conformance - Conformance Claims'
   },
   {
-    key: 'what-does-full-page-conformance-mean-in-wcag',
+    key: 'q054',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does "full-page conformance" mean in WCAG?',
     options: [
@@ -644,7 +644,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Conformance'
   },
   {
-    key: 'which-wcag-conformance-requirement-states-that-technologies-relied-upo',
+    key: 'q055',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG conformance requirement states that technologies relied upon for conformance must have accessibility support?',
     options: [
@@ -658,7 +658,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Conformance Requirement 4'
   },
   {
-    key: 'what-is-the-primary-purpose-of-the-iaap-was-certification',
+    key: 'q056',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the primary purpose of the IAAP WAS certification?',
     options: [
@@ -672,7 +672,7 @@ module.exports = [
     resource: 'IAAP WAS Credential Overview'
   },
   {
-    key: 'a-partial-conformance-claim-is-used-when',
+    key: 'q057',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A "partial conformance" claim is used when:',
     options: [
@@ -686,7 +686,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Conformance - Partial Conformance'
   },
   {
-    key: 'what-is-the-significance-of-the-reasonable-accommodation-concept-under',
+    key: 'q058',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the significance of the "Reasonable Accommodation" concept under the ADA in the context of digital accessibility?',
     options: [
@@ -700,7 +700,7 @@ module.exports = [
     resource: 'ADA Title I - Employment'
   },
   {
-    key: 'which-wcag-guideline-addresses-the-need-to-provide-users-enough-time-t',
+    key: 'q059',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG guideline addresses the need to provide users enough time to read and use content?',
     options: ['Guideline 2.1 (Keyboard Accessible)', 'Guideline 2.2 (Enough Time)', 'Guideline 2.3 (Seizures)', 'Guideline 1.4 (Distinguishable)'],
@@ -709,7 +709,7 @@ module.exports = [
     resource: 'WCAG 2.2 Guideline 2.2 (Enough Time)'
   },
   {
-    key: 'which-wcag-success-criterion-specifically-requires-that-a-mechanism-is',
+    key: 'q060',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG success criterion specifically requires that a mechanism is available to bypass blocks of content that are repeated on multiple pages?',
     options: [
@@ -723,7 +723,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.4.1 (Bypass Blocks)'
   },
   {
-    key: 'which-international-standard-defines-a-conformance-model-for-ict-produ',
+    key: 'q061',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which international standard defines a conformance model for ICT products and services used across global procurement?',
     options: ['ISO 9001', 'EN 301 549', 'NIST SP 800-53', 'ISO/IEC 40500'],
@@ -732,7 +732,7 @@ module.exports = [
     resource: 'ISO/IEC 40500:2012 (WCAG 2.0)'
   },
   {
-    key: 'the-air-carrier-access-act-acaa-requires-airlines-to-make-accessible',
+    key: 'q062',
     domain: 'Creating Accessible Web Solutions',
     stem: 'The Air Carrier Access Act (ACAA) requires airlines to make accessible:',
     options: [
@@ -748,7 +748,7 @@ module.exports = [
 
   // ── Design and UX ─────────────────────────────────────────────────────────
   {
-    key: 'which-design-choice-most-improves-cognitive-accessibility-for-complex-',
+    key: 'q063',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which design choice most improves cognitive accessibility for complex workflows?',
     options: [
@@ -762,7 +762,7 @@ module.exports = [
     resource: 'W3C Cognitive Accessibility Guidance'
   },
   {
-    key: 'a-modal-opens-and-keyboard-focus-remains-behind-it-on-the-page-what-is',
+    key: 'q064',
     domain: 'Identifying Accessibility Issues',
     stem: 'A modal opens and keyboard focus remains behind it on the page. What is the primary issue?',
     options: ['Color contrast failure', 'Focus management failure', 'Language of page missing', 'No transcript available'],
@@ -771,7 +771,7 @@ module.exports = [
     resource: 'WAI-ARIA Authoring Practices - Dialog Pattern'
   },
   {
-    key: 'what-is-the-minimum-purpose-of-alternative-text-for-informative-images',
+    key: 'q065',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the minimum purpose of alternative text for informative images?',
     options: [
@@ -785,7 +785,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.1.1 (Non-text Content)'
   },
   {
-    key: 'which-color-contrast-ratio-is-required-for-normal-body-text-under-wcag',
+    key: 'q066',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which color contrast ratio is required for normal body text under WCAG AA?',
     options: ['3:1', '4.5:1', '7:1', '2:1'],
@@ -794,7 +794,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.3 (Contrast Minimum)'
   },
   {
-    key: 'which-practice-best-supports-users-who-rely-on-keyboard-only-navigatio',
+    key: 'q067',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which practice best supports users who rely on keyboard-only navigation?',
     options: [
@@ -808,7 +808,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criteria 2.1.x and 2.4.7'
   },
   {
-    key: 'what-minimum-contrast-ratio-is-required-for-large-text-18pt-or-14pt-bo',
+    key: 'q068',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What minimum contrast ratio is required for large text (18pt or 14pt bold) under WCAG AA?',
     options: ['2:1', '3:1', '4.5:1', '7:1'],
@@ -817,7 +817,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.3 (Contrast Minimum)'
   },
   {
-    key: 'which-design-pattern-best-communicates-that-a-form-field-is-required-w',
+    key: 'q069',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which design pattern best communicates that a form field is required without relying solely on an asterisk?',
     options: [
@@ -831,7 +831,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 3.3.2 (Labels or Instructions)'
   },
   {
-    key: 'wcag-sc-1-4-10-reflow-requires-that-content-can-be-presented-without-h',
+    key: 'q070',
     domain: 'Creating Accessible Web Solutions',
     stem: 'WCAG SC 1.4.10 (Reflow) requires that content can be presented without horizontal scrolling at a width equivalent to:',
     options: ['400 CSS pixels', '320 CSS pixels', '768 CSS pixels', '1024 CSS pixels'],
@@ -840,7 +840,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.10 (Reflow)'
   },
   {
-    key: 'a-tooltip-only-appears-on-mouse-hover-a-keyboard-user-cannot-access-it',
+    key: 'q071',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A tooltip only appears on mouse hover. A keyboard user cannot access it. Which WCAG criterion is violated?',
     options: [
@@ -854,7 +854,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.13 (Content on Hover or Focus)'
   },
   {
-    key: 'a-link-that-reads-click-here-is-problematic-because',
+    key: 'q072',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A link that reads "Click here" is problematic because:',
     options: [
@@ -868,7 +868,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.4.4 (Link Purpose - In Context)'
   },
   {
-    key: 'what-is-the-recommended-minimum-touch-target-size-for-mobile-interacti',
+    key: 'q073',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the recommended minimum touch target size for mobile interactive elements per WCAG 2.5.5 (Level AAA)?',
     options: ['24×24 CSS pixels', '44×44 CSS pixels', '16×16 CSS pixels', '32×32 CSS pixels'],
@@ -877,7 +877,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.5.5 (Target Size - Enhanced)'
   },
   {
-    key: 'which-of-the-following-best-prevents-layout-breakage-when-a-user-adjus',
+    key: 'q074',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which of the following best prevents layout breakage when a user adjusts text spacing?',
     options: [
@@ -891,7 +891,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.12 (Text Spacing)'
   },
   {
-    key: 'what-should-happen-when-a-user-s-session-times-out-while-filling-a-lon',
+    key: 'q075',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What should happen when a user\'s session times out while filling a long form?',
     options: [
@@ -905,7 +905,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.2.1 (Timing Adjustable)'
   },
   {
-    key: 'parallax-scrolling-effects-with-rapid-motion-may-affect-users-with-ves',
+    key: 'q076',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Parallax scrolling effects with rapid motion may affect users with vestibular disorders. Which WCAG criterion applies?',
     options: [
@@ -919,7 +919,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.3.3 (Animation from Interactions)'
   },
   {
-    key: 'which-wcag-success-criterion-addresses-users-who-may-accidentally-acti',
+    key: 'q077',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG success criterion addresses users who may accidentally activate controls via motion (e.g., shaking a device)?',
     options: [
@@ -933,7 +933,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.5.4 (Motion Actuation)'
   },
   {
-    key: 'a-carousel-auto-advances-every-3-seconds-what-must-be-provided-to-meet',
+    key: 'q078',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A carousel auto-advances every 3 seconds. What must be provided to meet WCAG?',
     options: [
@@ -947,7 +947,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.2.2 (Pause, Stop, Hide)'
   },
   {
-    key: 'which-design-approach-ensures-that-instructions-do-not-solely-rely-on-',
+    key: 'q079',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which design approach ensures that instructions do not solely rely on shape, size, or location?',
     options: [
@@ -961,7 +961,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.3.3 (Sensory Characteristics)'
   },
   {
-    key: 'what-is-the-best-practice-for-error-identification-in-forms',
+    key: 'q080',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the best practice for error identification in forms?',
     options: [
@@ -975,7 +975,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 3.3.1 (Error Identification)'
   },
   {
-    key: 'what-should-happen-when-a-user-changes-a-setting-in-a-ui-component-wit',
+    key: 'q081',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What should happen when a user changes a setting in a UI component without explicit form submission?',
     options: [
@@ -989,7 +989,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 3.2.2 (On Input)'
   },
   {
-    key: 'inclusive-design-differs-from-accessibility-compliance-in-that-it',
+    key: 'q082',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Inclusive design differs from accessibility compliance in that it:',
     options: [
@@ -1003,7 +1003,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Inclusive Design'
   },
   {
-    key: 'a-navigation-menu-appears-at-the-top-of-every-page-which-wcag-criterio',
+    key: 'q083',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A navigation menu appears at the top of every page. Which WCAG criterion requires it to appear in the same relative order each time?',
     options: [
@@ -1017,7 +1017,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 3.2.3 (Consistent Navigation)'
   },
   {
-    key: 'when-designing-for-users-with-cognitive-disabilities-which-strategy-is',
+    key: 'q084',
     domain: 'Creating Accessible Web Solutions',
     stem: 'When designing for users with cognitive disabilities, which strategy is most beneficial?',
     options: [
@@ -1031,7 +1031,7 @@ module.exports = [
     resource: 'W3C Cognitive Accessibility Task Force Guidance'
   },
   {
-    key: 'an-icon-only-button-has-no-visible-text-label-how-should-the-accessibl',
+    key: 'q085',
     domain: 'Creating Accessible Web Solutions',
     stem: 'An icon-only button has no visible text label. How should the accessible name be provided?',
     options: [
@@ -1045,7 +1045,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 4.1.2 (Name, Role, Value)'
   },
   {
-    key: 'what-does-the-f-in-the-flesch-kincaid-readability-test-measure',
+    key: 'q086',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does the "F" in the Flesch-Kincaid readability test measure?',
     options: [
@@ -1059,7 +1059,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 3.1.5 (Reading Level)'
   },
   {
-    key: 'what-color-contrast-ratio-is-needed-for-wcag-aa-enhanced-level-aaa-for',
+    key: 'q087',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What color contrast ratio is needed for WCAG AA enhanced (Level AAA) for normal text?',
     options: ['4.5:1', '7:1', '3:1', '5:1'],
@@ -1068,7 +1068,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.6 (Contrast Enhanced)'
   },
   {
-    key: 'which-of-the-following-is-an-example-of-providing-multiple-ways-to-loc',
+    key: 'q088',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which of the following is an example of providing "multiple ways" to locate a page (SC 2.4.5)?',
     options: [
@@ -1084,7 +1084,7 @@ module.exports = [
 
   // ── Development Techniques ────────────────────────────────────────────────
   {
-    key: 'for-a-custom-button-component-which-implementation-is-most-accessible',
+    key: 'q089',
     domain: 'Creating Accessible Web Solutions',
     stem: 'For a custom button component, which implementation is most accessible?',
     options: [
@@ -1098,7 +1098,7 @@ module.exports = [
     resource: 'HTML Accessibility Best Practices'
   },
   {
-    key: 'when-should-aria-be-used-in-web-applications',
+    key: 'q090',
     domain: 'Creating Accessible Web Solutions',
     stem: 'When should ARIA be used in web applications?',
     options: [
@@ -1112,7 +1112,7 @@ module.exports = [
     resource: 'WAI-ARIA Specification and Authoring Practices'
   },
   {
-    key: 'a-field-error-appears-visually-but-is-not-announced-by-screen-readers-',
+    key: 'q091',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A field error appears visually but is not announced by screen readers. Which change is most appropriate?',
     options: [
@@ -1126,7 +1126,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criteria 3.3.x and ARIA live regions guidance'
   },
   {
-    key: 'what-is-the-most-robust-way-to-ensure-table-headers-are-conveyed-to-as',
+    key: 'q092',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the most robust way to ensure table headers are conveyed to assistive technologies?',
     options: [
@@ -1140,7 +1140,7 @@ module.exports = [
     resource: 'WCAG Techniques for Data Tables'
   },
   {
-    key: 'what-is-the-best-way-to-handle-skip-navigation-in-long-pages',
+    key: 'q093',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the best way to handle skip navigation in long pages?',
     options: [
@@ -1154,7 +1154,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.4.1 (Bypass Blocks)'
   },
   {
-    key: 'which-aria-property-is-used-to-associate-a-visible-label-element-with-',
+    key: 'q094',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which ARIA property is used to associate a visible label element with an input that is not a sibling?',
     options: ['aria-label', 'aria-labelledby', 'aria-describedby', 'aria-owns'],
@@ -1163,7 +1163,7 @@ module.exports = [
     resource: 'WAI-ARIA 1.2 - aria-labelledby'
   },
   {
-    key: 'what-is-the-correct-use-of-aria-live-assertive',
+    key: 'q095',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the correct use of aria-live="assertive"?',
     options: [
@@ -1177,7 +1177,7 @@ module.exports = [
     resource: 'WAI-ARIA 1.2 - aria-live'
   },
   {
-    key: 'how-should-an-image-used-as-a-link-be-marked-up-accessibly',
+    key: 'q096',
     domain: 'Creating Accessible Web Solutions',
     stem: 'How should an image used as a link be marked up accessibly?',
     options: [
@@ -1191,7 +1191,7 @@ module.exports = [
     resource: 'WCAG Technique H30 - Providing link text for image links'
   },
   {
-    key: 'what-does-the-html-lang-attribute-on-the-html-element-provide',
+    key: 'q097',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does the HTML lang attribute on the <html> element provide?',
     options: [
@@ -1205,7 +1205,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 3.1.1 (Language of Page)'
   },
   {
-    key: 'a-single-page-app-changes-content-dynamically-what-technique-helps-scr',
+    key: 'q098',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A single-page app changes content dynamically. What technique helps screen reader users discover the new content?',
     options: [
@@ -1219,7 +1219,7 @@ module.exports = [
     resource: 'WAI-ARIA Authoring Practices - Single Page Application Guidance'
   },
   {
-    key: 'which-value-of-the-aria-expanded-attribute-indicates-a-collapsed-menu',
+    key: 'q099',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which value of the aria-expanded attribute indicates a collapsed menu?',
     options: ['"true"', '"false"', '"undefined"', '"null"'],
@@ -1228,7 +1228,7 @@ module.exports = [
     resource: 'WAI-ARIA 1.2 - aria-expanded'
   },
   {
-    key: 'for-a-custom-checkbox-implemented-with-a-div-which-aria-role-and-attri',
+    key: 'q100',
     domain: 'Creating Accessible Web Solutions',
     stem: 'For a custom checkbox implemented with a <div>, which ARIA role and attribute combination is correct?',
     options: [
@@ -1242,7 +1242,7 @@ module.exports = [
     resource: 'WAI-ARIA 1.2 - checkbox role'
   },
   {
-    key: 'which-html-element-should-be-used-for-the-main-landmark-region-of-a-pa',
+    key: 'q101',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which HTML element should be used for the main landmark region of a page?',
     options: ['<div id="main">', '<section>', '<main>', '<article>'],
@@ -1251,7 +1251,7 @@ module.exports = [
     resource: 'HTML5 <main> Element and ARIA landmark navigation'
   },
   {
-    key: 'what-is-the-purpose-of-the-tabindex-0-attribute',
+    key: 'q102',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the purpose of the tabindex="0" attribute?',
     options: [
@@ -1265,7 +1265,7 @@ module.exports = [
     resource: 'WCAG Success Criterion 2.1.1 and HTML tabindex guidance'
   },
   {
-    key: 'an-inline-svg-icon-used-decoratively-should-be-hidden-from-assistive-t',
+    key: 'q103',
     domain: 'Creating Accessible Web Solutions',
     stem: 'An inline SVG icon used decoratively should be hidden from assistive technology using:',
     options: [
@@ -1279,7 +1279,7 @@ module.exports = [
     resource: 'WAI-ARIA 1.2 - aria-hidden'
   },
   {
-    key: 'which-technique-provides-accessible-descriptions-not-names-for-form-fi',
+    key: 'q104',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which technique provides accessible descriptions (not names) for form fields?',
     options: [
@@ -1293,7 +1293,7 @@ module.exports = [
     resource: 'WAI-ARIA 1.2 - aria-describedby'
   },
   {
-    key: 'what-is-the-accessibility-issue-with-using-css-before-and-after-pseudo',
+    key: 'q105',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the accessibility issue with using CSS :before and :after pseudo-elements to display informative text?',
     options: [
@@ -1307,7 +1307,7 @@ module.exports = [
     resource: 'WCAG Technique - CSS-generated content accessibility'
   },
   {
-    key: 'a-data-grid-with-multiple-rows-and-columns-requires-programmatic-row-a',
+    key: 'q106',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A data grid with multiple rows and columns requires programmatic row and column header associations. Which HTML element and attribute achieves this?',
     options: [
@@ -1321,7 +1321,7 @@ module.exports = [
     resource: 'WCAG Techniques H43 - Using id and headers attributes for table data cells'
   },
   {
-    key: 'which-keyboard-interaction-should-always-dismiss-a-pop-up-or-tooltip',
+    key: 'q107',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which keyboard interaction should always dismiss a pop-up or tooltip?',
     options: ['Tab', 'Enter', 'Escape', 'Space'],
@@ -1330,7 +1330,7 @@ module.exports = [
     resource: 'WAI-ARIA Authoring Practices Guide - Keyboard Interaction Patterns'
   },
   {
-    key: 'what-makes-an-iframe-fully-accessible',
+    key: 'q108',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What makes an iframe fully accessible?',
     options: [
@@ -1344,7 +1344,7 @@ module.exports = [
     resource: 'WCAG Technique H64 - Using the title attribute of the frame element'
   },
   {
-    key: 'how-should-a-required-field-constraint-be-exposed-programmatically',
+    key: 'q109',
     domain: 'Creating Accessible Web Solutions',
     stem: 'How should a "required" field constraint be exposed programmatically?',
     options: [
@@ -1358,7 +1358,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 3.3.2 (Labels or Instructions)'
   },
   {
-    key: 'what-happens-when-a-keyboard-user-navigates-to-a-custom-slider-with-on',
+    key: 'q110',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What happens when a keyboard user navigates to a custom slider with only arrow keys defined but no Home/End keys?',
     options: [
@@ -1372,7 +1372,7 @@ module.exports = [
     resource: 'WAI-ARIA Authoring Practices - Slider Pattern'
   },
   {
-    key: 'which-css-approach-ensures-text-remains-accessible-when-a-user-s-syste',
+    key: 'q111',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which CSS approach ensures text remains accessible when a user\'s system font size is increased?',
     options: [
@@ -1386,7 +1386,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.4 (Resize Text)'
   },
   {
-    key: 'in-a-tab-widget-which-aria-roles-correctly-identify-the-container-indi',
+    key: 'q112',
     domain: 'Creating Accessible Web Solutions',
     stem: 'In a tab widget, which ARIA roles correctly identify the container, individual tabs, and tab panel?',
     options: [
@@ -1400,7 +1400,7 @@ module.exports = [
     resource: 'WAI-ARIA Authoring Practices - Tabs Pattern'
   },
   {
-    key: 'a-pdf-document-must-be-tagged-what-does-tagging-a-pdf-mean',
+    key: 'q113',
     domain: 'Creating Accessible Web Solutions',
     stem: 'A PDF document must be tagged. What does "tagging" a PDF mean?',
     options: [
@@ -1414,7 +1414,7 @@ module.exports = [
     resource: 'PDF Accessibility - Tagged PDF Guidance'
   },
   {
-    key: 'what-is-the-first-rule-of-aria',
+    key: 'q114',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the first rule of ARIA?',
     options: [
@@ -1430,7 +1430,7 @@ module.exports = [
 
   // ── Testing and QA ────────────────────────────────────────────────────────
   {
-    key: 'which-testing-strategy-is-most-appropriate-for-accessibility-validatio',
+    key: 'q115',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which testing strategy is most appropriate for accessibility validation?',
     options: [
@@ -1444,7 +1444,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Testing and Validation'
   },
   {
-    key: 'what-is-a-primary-limitation-of-automated-accessibility-scanners',
+    key: 'q116',
     domain: 'Identifying Accessibility Issues',
     stem: 'What is a primary limitation of automated accessibility scanners?',
     options: [
@@ -1458,7 +1458,7 @@ module.exports = [
     resource: 'W3C Accessibility Evaluation Resources'
   },
   {
-    key: 'what-should-be-included-in-an-accessibility-defect-report-to-support-r',
+    key: 'q117',
     domain: 'Identifying Accessibility Issues',
     stem: 'What should be included in an accessibility defect report to support remediation?',
     options: [
@@ -1472,7 +1472,7 @@ module.exports = [
     resource: 'Accessibility QA Reporting Practices'
   },
   {
-    key: 'during-keyboard-testing-focus-order-appears-illogical-which-wcag-conce',
+    key: 'q118',
     domain: 'Identifying Accessibility Issues',
     stem: 'During keyboard testing, focus order appears illogical. Which WCAG concept is most relevant?',
     options: ['Meaningful Sequence', 'Non-text Content', 'Time-based Media', 'Parsing'],
@@ -1481,7 +1481,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criteria 1.3.2 and 2.4.3'
   },
   {
-    key: 'why-include-users-with-disabilities-in-usability-studies-when-possible',
+    key: 'q119',
     domain: 'Identifying Accessibility Issues',
     stem: 'Why include users with disabilities in usability studies when possible?',
     options: [
@@ -1495,7 +1495,7 @@ module.exports = [
     resource: 'Inclusive Research and User Testing Guidance'
   },
   {
-    key: 'what-percentage-of-wcag-success-criteria-can-typically-be-detected-by-',
+    key: 'q120',
     domain: 'Identifying Accessibility Issues',
     stem: 'What percentage of WCAG success criteria can typically be detected by automated tools alone?',
     options: ['100%', '80%', '30–40%', '10%'],
@@ -1504,7 +1504,7 @@ module.exports = [
     resource: 'W3C - How to Use Automated Testing Tools for Accessibility'
   },
   {
-    key: 'which-screen-reader-browser-pairing-is-most-commonly-used-in-professio',
+    key: 'q121',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which screen reader + browser pairing is most commonly used in professional accessibility testing on Windows?',
     options: [
@@ -1518,7 +1518,7 @@ module.exports = [
     resource: 'WebAIM Screen Reader User Survey'
   },
   {
-    key: 'when-testing-color-contrast-what-tool-capability-is-most-important',
+    key: 'q122',
     domain: 'Identifying Accessibility Issues',
     stem: 'When testing color contrast, what tool capability is most important?',
     options: [
@@ -1532,7 +1532,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.3 - Contrast Testing Guidance'
   },
   {
-    key: 'which-browser-developer-tool-feature-is-most-useful-for-quickly-inspec',
+    key: 'q123',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which browser developer tool feature is most useful for quickly inspecting the accessibility tree?',
     options: [
@@ -1546,7 +1546,7 @@ module.exports = [
     resource: 'Chrome DevTools Accessibility Reference'
   },
   {
-    key: 'a-zero-defect-automated-scan-does-not-mean',
+    key: 'q124',
     domain: 'Identifying Accessibility Issues',
     stem: 'A zero-defect automated scan does NOT mean:',
     options: [
@@ -1560,7 +1560,7 @@ module.exports = [
     resource: 'W3C Accessibility Evaluation Resources'
   },
   {
-    key: 'what-is-the-purpose-of-the-axe-accessibility-engine',
+    key: 'q125',
     domain: 'Identifying Accessibility Issues',
     stem: 'What is the purpose of the axe accessibility engine?',
     options: [
@@ -1574,7 +1574,7 @@ module.exports = [
     resource: 'Deque axe Accessibility Engine'
   },
   {
-    key: 'what-does-keyboard-trap-mean-in-accessibility-testing',
+    key: 'q126',
     domain: 'Identifying Accessibility Issues',
     stem: 'What does "keyboard trap" mean in accessibility testing?',
     options: [
@@ -1588,7 +1588,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 2.1.2 (No Keyboard Trap)'
   },
   {
-    key: 'to-test-wcag-1-4-10-reflow-a-tester-should',
+    key: 'q127',
     domain: 'Identifying Accessibility Issues',
     stem: 'To test WCAG 1.4.10 (Reflow), a tester should:',
     options: [
@@ -1602,7 +1602,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.10 (Reflow) - Testing Guidance'
   },
   {
-    key: 'which-type-of-accessibility-audit-provides-the-most-thorough-findings',
+    key: 'q128',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which type of accessibility audit provides the most thorough findings?',
     options: [
@@ -1616,7 +1616,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Evaluation Approaches'
   },
   {
-    key: 'how-should-the-presence-and-quality-of-captions-be-evaluated',
+    key: 'q129',
     domain: 'Identifying Accessibility Issues',
     stem: 'How should the presence and quality of captions be evaluated?',
     options: [
@@ -1630,7 +1630,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.2.2 (Captions - Prerecorded) - Testing'
   },
   {
-    key: 'during-at-testing-with-voiceover-on-ios-which-gesture-reads-the-next-i',
+    key: 'q130',
     domain: 'Identifying Accessibility Issues',
     stem: 'During AT testing with VoiceOver on iOS, which gesture reads the next item?',
     options: ['Three-finger swipe up', 'Single swipe right', 'Double tap', 'Pinch out'],
@@ -1639,7 +1639,7 @@ module.exports = [
     resource: 'Apple VoiceOver Gestures Reference'
   },
   {
-    key: 'when-documenting-an-accessibility-finding-as-needs-review-the-evaluato',
+    key: 'q131',
     domain: 'Identifying Accessibility Issues',
     stem: 'When documenting an accessibility finding as "Needs Review", the evaluator means:',
     options: [
@@ -1653,7 +1653,7 @@ module.exports = [
     resource: 'W3C Accessibility Evaluation Resources'
   },
   {
-    key: 'what-is-the-primary-purpose-of-a-walkthrough-evaluation-method-in-acce',
+    key: 'q132',
     domain: 'Identifying Accessibility Issues',
     stem: 'What is the primary purpose of a "walkthrough" evaluation method in accessibility?',
     options: [
@@ -1667,7 +1667,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility Auditing Methods'
   },
   {
-    key: 'what-is-wcag-em',
+    key: 'q133',
     domain: 'Identifying Accessibility Issues',
     stem: 'What is WCAG-EM?',
     options: [
@@ -1681,7 +1681,7 @@ module.exports = [
     resource: 'W3C WCAG-EM Evaluation Methodology'
   },
   {
-    key: 'which-wcag-success-criterion-is-specifically-tested-by-turning-off-css',
+    key: 'q134',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which WCAG success criterion is specifically tested by turning off CSS and checking that content order is logical?',
     options: [
@@ -1695,7 +1695,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.3.2 (Meaningful Sequence)'
   },
   {
-    key: 'an-evaluator-discovers-a-third-party-widget-on-a-page-that-fails-wcag-',
+    key: 'q135',
     domain: 'Identifying Accessibility Issues',
     stem: 'An evaluator discovers a third-party widget on a page that fails WCAG. Who is responsible for remediating it?',
     options: [
@@ -1709,7 +1709,7 @@ module.exports = [
     resource: 'WCAG Understanding Conformance Requirements'
   },
   {
-    key: 'which-accessibility-testing-scenario-requires-a-real-screen-reader-rat',
+    key: 'q136',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which accessibility testing scenario requires a real screen reader rather than a DOM inspection tool?',
     options: [
@@ -1723,7 +1723,7 @@ module.exports = [
     resource: 'WAI-ARIA - Live Regions Testing Guidance'
   },
   {
-    key: 'wave-web-accessibility-evaluation-tool-identifies-issues-by',
+    key: 'q137',
     domain: 'Identifying Accessibility Issues',
     stem: 'WAVE (Web Accessibility Evaluation Tool) identifies issues by:',
     options: [
@@ -1737,7 +1737,7 @@ module.exports = [
     resource: 'WebAIM WAVE Tool Documentation'
   },
   {
-    key: 'what-is-a-regression-test-in-the-context-of-accessibility',
+    key: 'q138',
     domain: 'Identifying Accessibility Issues',
     stem: 'What is a "regression test" in the context of accessibility?',
     options: [
@@ -1753,7 +1753,7 @@ module.exports = [
 
   // ── Program Management ────────────────────────────────────────────────────
   {
-    key: 'which-role-is-most-responsible-for-embedding-accessibility-requirement',
+    key: 'q139',
     domain: 'Remediating Issues',
     stem: 'Which role is most responsible for embedding accessibility requirements into procurement and vendor contracts?',
     options: ['Finance only', 'Product and procurement stakeholders with accessibility governance support', 'Interns only', 'No role is needed'],
@@ -1762,7 +1762,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Organizational Integration'
   },
   {
-    key: 'what-is-the-strongest-kpi-for-sustained-accessibility-maturity',
+    key: 'q140',
     domain: 'Remediating Issues',
     stem: 'What is the strongest KPI for sustained accessibility maturity?',
     options: [
@@ -1776,7 +1776,7 @@ module.exports = [
     resource: 'Accessibility Program Metrics Guidance'
   },
   {
-    key: 'what-is-the-best-first-response-when-a-critical-accessibility-issue-is',
+    key: 'q141',
     domain: 'Remediating Issues',
     stem: 'What is the best first response when a critical accessibility issue is found in production?',
     options: [
@@ -1790,7 +1790,7 @@ module.exports = [
     resource: 'Accessibility Incident Management Practices'
   },
   {
-    key: 'which-policy-statement-is-most-aligned-with-an-accessibility-first-cul',
+    key: 'q142',
     domain: 'Remediating Issues',
     stem: 'Which policy statement is most aligned with an accessibility-first culture?',
     options: [
@@ -1804,7 +1804,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Governance'
   },
   {
-    key: 'what-is-the-key-purpose-of-an-accessibility-statement-published-by-an-',
+    key: 'q143',
     domain: 'Remediating Issues',
     stem: 'What is the key purpose of an accessibility statement published by an organization?',
     options: [
@@ -1818,7 +1818,7 @@ module.exports = [
     resource: 'W3C Accessibility Statement Generator Guidance'
   },
   {
-    key: 'what-is-an-accessibility-champion-in-an-organization',
+    key: 'q144',
     domain: 'Remediating Issues',
     stem: 'What is an "accessibility champion" in an organization?',
     options: [
@@ -1832,7 +1832,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Organizational Culture'
   },
   {
-    key: 'what-is-the-best-approach-when-prioritizing-accessibility-remediation-',
+    key: 'q145',
     domain: 'Remediating Issues',
     stem: 'What is the best approach when prioritizing accessibility remediation of a large backlog?',
     options: [
@@ -1846,7 +1846,7 @@ module.exports = [
     resource: 'Accessibility Remediation Prioritization Guidance'
   },
   {
-    key: 'why-is-accessibility-training-important-for-all-team-members-not-just-',
+    key: 'q146',
     domain: 'Remediating Issues',
     stem: 'Why is accessibility training important for all team members, not just developers?',
     options: [
@@ -1860,7 +1860,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Training and Awareness'
   },
   {
-    key: 'what-is-the-purpose-of-an-accessibility-roadmap-in-an-organization',
+    key: 'q147',
     domain: 'Remediating Issues',
     stem: 'What is the purpose of an "accessibility roadmap" in an organization?',
     options: [
@@ -1874,7 +1874,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility Program Planning'
   },
   {
-    key: 'which-accessibility-metric-best-indicates-whether-accessibility-is-bei',
+    key: 'q148',
     domain: 'Remediating Issues',
     stem: 'Which accessibility metric best indicates whether accessibility is being addressed in the design phase?',
     options: [
@@ -1888,7 +1888,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Shift-Left Accessibility'
   },
   {
-    key: 'what-is-the-relationship-between-accessibility-and-usability',
+    key: 'q149',
     domain: 'Remediating Issues',
     stem: 'What is the relationship between accessibility and usability?',
     options: [
@@ -1902,7 +1902,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility and Usability'
   },
   {
-    key: 'when-evaluating-third-party-software-for-procurement-which-document-sh',
+    key: 'q150',
     domain: 'Remediating Issues',
     stem: 'When evaluating third-party software for procurement, which document should vendors be asked to provide?',
     options: [
@@ -1916,7 +1916,7 @@ module.exports = [
     resource: 'ITI VPAT Guidance - Procurement'
   },
   {
-    key: 'an-organization-commits-to-a-wcag-2-1-level-aa-target-what-does-this-c',
+    key: 'q151',
     domain: 'Remediating Issues',
     stem: 'An organization commits to a "WCAG 2.1 Level AA" target. What does this commitment entail?',
     options: [
@@ -1930,7 +1930,7 @@ module.exports = [
     resource: 'WCAG 2.1 Understanding Conformance'
   },
   {
-    key: 'which-of-the-following-best-describes-a-feedback-loop-in-an-accessibil',
+    key: 'q152',
     domain: 'Remediating Issues',
     stem: 'Which of the following best describes a "feedback loop" in an accessibility program?',
     options: [
@@ -1944,7 +1944,7 @@ module.exports = [
     resource: 'W3C Accessibility Statement - Feedback Mechanism Guidance'
   },
   {
-    key: 'what-is-the-typical-first-step-in-an-organizational-accessibility-matu',
+    key: 'q153',
     domain: 'Remediating Issues',
     stem: 'What is the typical first step in an organizational accessibility maturity assessment?',
     options: [
@@ -1958,7 +1958,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility Maturity Models'
   },
   {
-    key: 'how-does-embedding-accessibility-in-the-definition-of-done-benefit-a-d',
+    key: 'q154',
     domain: 'Remediating Issues',
     stem: 'How does embedding accessibility in the "definition of done" benefit a development team?',
     options: [
@@ -1972,7 +1972,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Agile Accessibility Integration'
   },
   {
-    key: 'which-of-the-following-is-not-a-component-of-an-effective-organization',
+    key: 'q155',
     domain: 'Remediating Issues',
     stem: 'Which of the following is NOT a component of an effective organizational accessibility policy?',
     options: [
@@ -1986,7 +1986,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility Policy'
   },
   {
-    key: 'what-does-shift-left-mean-in-the-context-of-accessibility',
+    key: 'q156',
     domain: 'Remediating Issues',
     stem: 'What does "shift-left" mean in the context of accessibility?',
     options: [
@@ -2000,7 +2000,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Shift-Left Accessibility'
   },
   {
-    key: 'an-organization-receives-an-accessibility-complaint-from-a-user-what-i',
+    key: 'q157',
     domain: 'Remediating Issues',
     stem: 'An organization receives an accessibility complaint from a user. What is the best immediate response?',
     options: [
@@ -2014,7 +2014,7 @@ module.exports = [
     resource: 'W3C Accessibility Statement - Feedback Handling'
   },
   {
-    key: 'what-is-an-exception-process-in-accessibility-governance',
+    key: 'q158',
     domain: 'Remediating Issues',
     stem: 'What is an "exception process" in accessibility governance?',
     options: [
@@ -2028,7 +2028,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility Governance'
   },
   {
-    key: 'which-role-in-an-organization-typically-owns-the-accessibility-policy',
+    key: 'q159',
     domain: 'Remediating Issues',
     stem: 'Which role in an organization typically owns the accessibility policy?',
     options: [
@@ -2042,7 +2042,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Program Ownership and Governance'
   },
   {
-    key: 'what-does-operable-mean-in-the-context-of-wcag-principles',
+    key: 'q160',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does "operable" mean in the context of WCAG principles?',
     options: [
@@ -2056,7 +2056,7 @@ module.exports = [
     resource: 'WCAG 2.2 Principle 2 (Operable)'
   },
   {
-    key: 'which-assistive-technology-is-primarily-designed-for-users-with-motor-',
+    key: 'q161',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which assistive technology is primarily designed for users with motor disabilities who cannot use a standard keyboard or mouse?',
     options: ['Screen reader', 'Refreshable Braille display', 'Switch access device', 'Screen magnifier'],
@@ -2065,7 +2065,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Disabilities and Assistive Technology'
   },
   {
-    key: 'cognitive-accessibility-primarily-benefits-users-who-have-difficulty-w',
+    key: 'q162',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Cognitive accessibility primarily benefits users who have difficulty with:',
     options: ['Perceiving visual content', 'Processing, understanding, or remembering information', 'Hearing audio content', 'Using a mouse'],
@@ -2074,7 +2074,7 @@ module.exports = [
     resource: 'W3C Cognitive Accessibility Guidance'
   },
   {
-    key: 'what-is-the-purpose-of-the-robust-principle-in-wcag',
+    key: 'q163',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the purpose of the "robust" principle in WCAG?',
     options: [
@@ -2088,7 +2088,7 @@ module.exports = [
     resource: 'WCAG 2.2 Principle 4 (Robust)'
   },
   {
-    key: 'what-does-section-508-in-the-united-states-govern',
+    key: 'q164',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What does "Section 508" in the United States govern?',
     options: [
@@ -2102,7 +2102,7 @@ module.exports = [
     resource: 'Section 508 Standards'
   },
   {
-    key: 'the-eu-web-accessibility-directive-2016-2102-applies-to-which-entities',
+    key: 'q165',
     domain: 'Creating Accessible Web Solutions',
     stem: 'The EU Web Accessibility Directive (2016/2102) applies to which entities?',
     options: [
@@ -2116,7 +2116,7 @@ module.exports = [
     resource: 'EU Web Accessibility Directive 2016/2102'
   },
   {
-    key: 'what-is-the-role-of-the-access-board-in-u-s-accessibility-regulation',
+    key: 'q166',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the role of the Access Board in U.S. accessibility regulation?',
     options: [
@@ -2130,7 +2130,7 @@ module.exports = [
     resource: 'U.S. Access Board Overview'
   },
   {
-    key: 'wcag-2-1-added-success-criteria-primarily-focused-on-which-user-groups',
+    key: 'q167',
     domain: 'Creating Accessible Web Solutions',
     stem: 'WCAG 2.1 added success criteria primarily focused on which user groups?',
     options: [
@@ -2144,7 +2144,7 @@ module.exports = [
     resource: 'WCAG 2.1 What\'s New'
   },
   {
-    key: 'what-is-a-skip-navigation-link-and-why-is-it-important',
+    key: 'q168',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is a "skip navigation" link and why is it important?',
     options: [
@@ -2158,7 +2158,7 @@ module.exports = [
     resource: 'WCAG 2.2 SC 2.4.1 (Bypass Blocks)'
   },
   {
-    key: 'which-design-pattern-best-supports-users-with-cognitive-disabilities-w',
+    key: 'q169',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which design pattern best supports users with cognitive disabilities when completing complex tasks?',
     options: [
@@ -2172,7 +2172,7 @@ module.exports = [
     resource: 'W3C Cognitive Accessibility Guidance'
   },
   {
-    key: 'what-is-the-minimum-recommended-touch-target-size-for-mobile-accessibi',
+    key: 'q170',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the minimum recommended touch target size for mobile accessibility according to WCAG 2.5.5?',
     options: ['24x24 CSS pixels', '44x44 CSS pixels', '32x32 CSS pixels', '16x16 CSS pixels'],
@@ -2181,7 +2181,7 @@ module.exports = [
     resource: 'WCAG 2.2 SC 2.5.5 (Target Size)'
   },
   {
-    key: 'when-should-a-designer-avoid-using-carousels-or-auto-rotating-content',
+    key: 'q171',
     domain: 'Creating Accessible Web Solutions',
     stem: 'When should a designer avoid using carousels or auto-rotating content?',
     options: [
@@ -2195,7 +2195,7 @@ module.exports = [
     resource: 'WCAG 2.2 SC 2.2.2 (Pause, Stop, Hide)'
   },
   {
-    key: 'which-html-element-should-be-used-to-mark-up-the-primary-navigation-la',
+    key: 'q172',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which HTML element should be used to mark up the primary navigation landmark?',
     options: ['<aside>', '<div id="nav">', '<nav>', '<section>'],
@@ -2204,7 +2204,7 @@ module.exports = [
     resource: 'HTML Living Standard - nav element'
   },
   {
-    key: 'what-attribute-should-be-added-to-an-input-element-to-associate-it-wit',
+    key: 'q173',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What attribute should be added to an <input> element to associate it with a visible label that has id="email-label"?',
     options: ['aria-label="email-label"', 'title="email-label"', 'for="email-label"', 'aria-labelledby="email-label"'],
@@ -2213,7 +2213,7 @@ module.exports = [
     resource: 'ARIA in HTML - aria-labelledby'
   },
   {
-    key: 'which-css-property-when-set-to-none-can-inadvertently-remove-visible-f',
+    key: 'q174',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which CSS property, when set to "none", can inadvertently remove visible focus indicators and harm keyboard accessibility?',
     options: ['visibility', 'outline', 'opacity', 'display'],
@@ -2222,7 +2222,7 @@ module.exports = [
     resource: 'WCAG 2.2 SC 2.4.7 (Focus Visible)'
   },
   {
-    key: 'what-is-the-purpose-of-the-aria-expanded-attribute',
+    key: 'q175',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the purpose of the aria-expanded attribute?',
     options: [
@@ -2236,7 +2236,7 @@ module.exports = [
     resource: 'ARIA Authoring Practices Guide - Accordion'
   },
   {
-    key: 'when-implementing-a-custom-modal-dialog-which-technique-correctly-trap',
+    key: 'q176',
     domain: 'Creating Accessible Web Solutions',
     stem: 'When implementing a custom modal dialog, which technique correctly traps keyboard focus within the dialog while it is open?',
     options: [
@@ -2250,7 +2250,7 @@ module.exports = [
     resource: 'ARIA Authoring Practices Guide - Dialog (Modal)'
   },
   {
-    key: 'which-automated-tool-is-commonly-integrated-into-ci-cd-pipelines-to-fl',
+    key: 'q177',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which automated tool is commonly integrated into CI/CD pipelines to flag WCAG violations before deployment?',
     options: ['WAVE', 'axe-core', 'NVDA', 'VoiceOver'],
@@ -2259,7 +2259,7 @@ module.exports = [
     resource: 'Deque axe-core documentation'
   },
   {
-    key: 'what-percentage-of-wcag-issues-can-typically-be-caught-through-automat',
+    key: 'q178',
     domain: 'Identifying Accessibility Issues',
     stem: 'What percentage of WCAG issues can typically be caught through automated testing alone?',
     options: ['Nearly 100%', 'About 30–40%', 'About 60–70%', 'Less than 10%'],
@@ -2268,7 +2268,7 @@ module.exports = [
     resource: 'WebAIM - Testing Methodologies'
   },
   {
-    key: 'when-manually-testing-keyboard-navigation-what-is-the-correct-sequence',
+    key: 'q179',
     domain: 'Identifying Accessibility Issues',
     stem: 'When manually testing keyboard navigation, what is the correct sequence to check focus order?',
     options: [
@@ -2282,7 +2282,7 @@ module.exports = [
     resource: 'WebAIM - Keyboard Accessibility'
   },
   {
-    key: 'what-is-the-primary-reason-to-include-users-with-disabilities-in-acces',
+    key: 'q180',
     domain: 'Identifying Accessibility Issues',
     stem: 'What is the primary reason to include users with disabilities in accessibility testing?',
     options: [
@@ -2296,7 +2296,7 @@ module.exports = [
     resource: 'W3C Involving Users in Evaluating Web Accessibility'
   },
   {
-    key: 'which-document-type-is-used-to-formally-report-accessibility-conforman',
+    key: 'q181',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which document type is used to formally report accessibility conformance and known issues for a product?',
     options: ['WCAG Audit Checklist', 'Accessibility Conformance Report (ACR/VPAT)', 'Issue Tracker Export', 'WCAG Quick Reference'],
@@ -2305,7 +2305,7 @@ module.exports = [
     resource: 'ITI VPAT / ACR Framework'
   },
   {
-    key: 'which-screen-reader-and-browser-combination-is-most-widely-used-on-des',
+    key: 'q182',
     domain: 'Identifying Accessibility Issues',
     stem: 'Which screen reader and browser combination is most widely used on desktop according to WebAIM Screen Reader User Surveys?',
     options: ['VoiceOver + Safari', 'JAWS + Chrome or Edge', 'NVDA + Firefox', 'Narrator + Edge'],
@@ -2314,7 +2314,7 @@ module.exports = [
     resource: 'WebAIM Screen Reader User Survey'
   },
   {
-    key: 'which-approach-best-ensures-accessibility-is-maintained-as-a-product-e',
+    key: 'q183',
     domain: 'Remediating Issues',
     stem: 'Which approach best ensures accessibility is maintained as a product evolves over time?',
     options: [
@@ -2328,7 +2328,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Program Management'
   },
   {
-    key: 'what-is-the-primary-purpose-of-an-accessibility-roadmap',
+    key: 'q184',
     domain: 'Remediating Issues',
     stem: 'What is the primary purpose of an accessibility roadmap?',
     options: [
@@ -2342,7 +2342,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Program Planning'
   },
   {
-    key: 'what-type-of-training-is-most-effective-for-helping-developers-write-a',
+    key: 'q185',
     domain: 'Remediating Issues',
     stem: 'What type of training is most effective for helping developers write accessible code?',
     options: [
@@ -2356,7 +2356,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility Training'
   },
   {
-    key: 'which-metric-is-most-meaningful-for-tracking-progress-toward-an-access',
+    key: 'q186',
     domain: 'Remediating Issues',
     stem: 'Which metric is most meaningful for tracking progress toward an accessible product?',
     options: [
@@ -2370,7 +2370,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Metrics and Reporting'
   },
   {
-    key: 'which-wcag-principle-is-most-directly-concerned-with-making-text-conte',
+    key: 'q187',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which WCAG principle is most directly concerned with making text content readable and understandable?',
     options: ['Perceivable', 'Operable', 'Understandable', 'Robust'],
@@ -2379,7 +2379,7 @@ module.exports = [
     resource: 'WCAG 2.2 Principle 3 (Understandable)'
   },
   {
-    key: 'what-is-an-accessibility-conformance-claim-under-wcag',
+    key: 'q188',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is an "accessibility conformance claim" under WCAG?',
     options: [
@@ -2393,7 +2393,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Conformance'
   },
   {
-    key: 'which-principle-of-inclusive-design-encourages-creating-one-solution-t',
+    key: 'q189',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which principle of inclusive design encourages creating one solution that works for the widest range of users rather than separate "accessible" versions?',
     options: ['Graceful degradation', 'Universal Design', 'Progressive enhancement', 'Responsive design'],
@@ -2402,7 +2402,7 @@ module.exports = [
     resource: 'NC State University - Principles of Universal Design'
   },
   {
-    key: 'what-accessible-design-consideration-is-critical-when-using-iconograph',
+    key: 'q190',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What accessible design consideration is critical when using iconography as the sole means of conveying UI actions?',
     options: [
@@ -2416,7 +2416,7 @@ module.exports = [
     resource: 'WCAG 2.2 SC 1.1.1 (Non-text Content)'
   },
   {
-    key: 'what-is-the-correct-aria-role-for-a-group-of-radio-buttons',
+    key: 'q191',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What is the correct ARIA role for a group of radio buttons?',
     options: ['group', 'radiogroup', 'listbox', 'menu'],
@@ -2425,7 +2425,7 @@ module.exports = [
     resource: 'ARIA in HTML - radiogroup role'
   },
   {
-    key: 'when-an-image-serves-purely-as-decoration-and-conveys-no-information-w',
+    key: 'q192',
     domain: 'Creating Accessible Web Solutions',
     stem: 'When an image serves purely as decoration and conveys no information, what is the correct alt attribute value?',
     options: ['"decorative"', '"image"', '""  (empty string)', 'The filename of the image'],
@@ -2434,7 +2434,7 @@ module.exports = [
     resource: 'WCAG 2.2 SC 1.1.1 Technique H67'
   },
   {
-    key: 'what-is-the-accessibility-tree-and-why-is-it-important-for-testing',
+    key: 'q193',
     domain: 'Identifying Accessibility Issues',
     stem: 'What is the "accessibility tree" and why is it important for testing?',
     options: [
@@ -2448,7 +2448,7 @@ module.exports = [
     resource: 'MDN Web Docs - Accessibility Tree'
   },
   {
-    key: 'which-condition-is-classified-as-an-episodic-disability-meaning-it-flu',
+    key: 'q194',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which condition is classified as an episodic disability, meaning it fluctuates over time?',
     options: ['Congenital blindness', 'Multiple sclerosis', 'Complete deafness from birth', 'Amputation'],
@@ -2457,7 +2457,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Disability Categories'
   },
   {
-    key: 'under-wcag-2-2-what-does-conformance-level-aa-mean-for-an-organization',
+    key: 'q195',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Under WCAG 2.2, what does "conformance level AA" mean for an organization?',
     options: [
@@ -2471,7 +2471,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Conformance'
   },
   {
-    key: 'which-html-attribute-enables-a-browser-s-built-in-spell-check-for-a-te',
+    key: 'q196',
     domain: 'Creating Accessible Web Solutions',
     stem: 'Which HTML attribute enables a browser\'s built-in spell check for a text input and may also be used to disable it for sensitive fields?',
     options: ['autocorrect', 'spellcheck', 'autocomplete', 'inputmode'],
@@ -2480,7 +2480,7 @@ module.exports = [
     resource: 'HTML Living Standard - spellcheck attribute'
   },
   {
-    key: 'in-wcag-evaluation-methodology-wcag-em-what-is-the-first-step-of-the-e',
+    key: 'q197',
     domain: 'Identifying Accessibility Issues',
     stem: 'In WCAG evaluation methodology (WCAG-EM), what is the first step of the evaluation process?',
     options: ['Select a sample of web pages', 'Define the evaluation scope', 'Perform automated testing', 'Report findings'],
@@ -2489,7 +2489,7 @@ module.exports = [
     resource: 'W3C WCAG-EM Overview'
   },
   {
-    key: 'what-term-describes-the-ability-of-an-accessibility-feature-to-functio',
+    key: 'q198',
     domain: 'Creating Accessible Web Solutions',
     stem: 'What term describes the ability of an accessibility feature to function correctly in a specific combination of user agent, assistive technology, and platform?',
     options: ['Compatibility', 'Accessibility support', 'Baseline compliance', 'Progressive enhancement'],
@@ -2498,7 +2498,7 @@ module.exports = [
     resource: 'WCAG 2.2 Understanding Accessibility Support'
   },
   {
-    key: 'which-practice-helps-an-organization-build-institutional-knowledge-abo',
+    key: 'q199',
     domain: 'Remediating Issues',
     stem: 'Which practice helps an organization build institutional knowledge about accessibility rather than relying on a single expert?',
     options: [
@@ -2512,7 +2512,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Building an Accessibility Culture'
   },
   {
-    key: 'when-designing-forms-which-technique-helps-users-with-cognitive-disabi',
+    key: 'q200',
     domain: 'Creating Accessible Web Solutions',
     stem: 'When designing forms, which technique helps users with cognitive disabilities recover from validation errors?',
     options: [
