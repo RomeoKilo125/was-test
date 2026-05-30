@@ -52,6 +52,51 @@ db.exec(`
 
 const count = db.prepare('SELECT COUNT(*) as total FROM question_bank').get().total
 
+// Migrate any legacy domain names to the three WAS content outline domains.
+// Runs at startup whenever legacy names are detected so the DB stays current
+// as new questions arrive from other agents.
+const legacyCount = db
+  .prepare(
+    `SELECT COUNT(*) as cnt FROM question_bank
+     WHERE domain NOT IN (
+       'Creating Accessible Web Solutions',
+       'Identifying Accessibility Issues',
+       'Remediating Issues'
+     )`
+  )
+  .get().cnt
+
+if (legacyCount > 0) {
+  db.transaction(() => {
+    // Bulk remap old category names
+    db.prepare(
+      `UPDATE question_bank SET domain = 'Creating Accessible Web Solutions'
+       WHERE domain IN ('Accessibility Foundations', 'Standards and Laws', 'Design and UX', 'Development Techniques')`
+    ).run()
+    db.prepare(
+      `UPDATE question_bank SET domain = 'Identifying Accessibility Issues'
+       WHERE domain = 'Testing and QA'`
+    ).run()
+    db.prepare(
+      `UPDATE question_bank SET domain = 'Remediating Issues'
+       WHERE domain = 'Program Management'`
+    ).run()
+    // Per-question corrections for items bulk-moved to the wrong domain above
+    db.prepare(
+      `UPDATE question_bank SET domain = 'Identifying Accessibility Issues'
+       WHERE stem LIKE '%color%required fields%'`
+    ).run()
+    db.prepare(
+      `UPDATE question_bank SET domain = 'Remediating Issues'
+       WHERE stem LIKE '%map product requirements to WCAG%'`
+    ).run()
+    db.prepare(
+      `UPDATE question_bank SET domain = 'Remediating Issues'
+       WHERE stem LIKE '%VPAT%'`
+    ).run()
+  })()
+}
+
 if (count === 0) {
   const insert = db.prepare(`
     INSERT INTO question_bank (domain, stem, options_json, correct_option, explanation, resource)

@@ -1,7 +1,7 @@
 module.exports = [
   // ── Accessibility Foundations ──────────────────────────────────────────────
   {
-    domain: 'Accessibility Foundations',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'Which principle from WCAG requires that content can be presented in different ways without losing meaning?',
     options: ['Operable', 'Perceivable', 'Understandable', 'Robust'],
     correctOption: 1,
@@ -9,7 +9,7 @@ module.exports = [
     resource: 'WCAG 2.2 Guideline 1.3 (Adaptable)'
   },
   {
-    domain: 'Accessibility Foundations',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'What is the best definition of assistive technology (AT)?',
     options: [
       'A browser plugin for debugging web code',
@@ -22,7 +22,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Disabilities and Assistive Technology'
   },
   {
-    domain: 'Accessibility Foundations',
+    domain: 'Identifying Accessibility Issues',
     stem: 'A user can only complete a form when color is used to indicate required fields. Which WCAG requirement is most directly violated?',
     options: ['Use of Color', 'Pointer Gestures', 'Focus Visible', 'Page Titled'],
     correctOption: 0,
@@ -30,7 +30,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.1 (Use of Color)'
   },
   {
-    domain: 'Accessibility Foundations',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'Which statement best describes the POUR framework?',
     options: [
       'A testing sequence: Plan, Observe, Update, Report',
@@ -43,7 +43,7 @@ module.exports = [
     resource: 'WCAG 2.2 Principles'
   },
   {
-    domain: 'Accessibility Foundations',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'Which disability category is most associated with the need for captions in prerecorded videos?',
     options: ['Auditory', 'Motor', 'Cognitive', 'Speech'],
     correctOption: 0,
@@ -367,7 +367,7 @@ module.exports = [
 
   // ── Standards and Laws ────────────────────────────────────────────────────
   {
-    domain: 'Standards and Laws',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'Which standard is the primary global web accessibility standard referenced by many laws and policies?',
     options: ['ISO 9001', 'WCAG', 'PCI DSS', 'SOC 2'],
     correctOption: 1,
@@ -375,7 +375,7 @@ module.exports = [
     resource: 'W3C Web Content Accessibility Guidelines'
   },
   {
-    domain: 'Standards and Laws',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'Section 508 in the United States primarily applies to:',
     options: [
       'Private blogs only',
@@ -388,7 +388,7 @@ module.exports = [
     resource: 'U.S. Section 508 Standards'
   },
   {
-    domain: 'Standards and Laws',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'EN 301 549 is most relevant to accessibility requirements in which region?',
     options: ['European Union', 'Australia only', 'South America only', 'Global private equity firms'],
     correctOption: 0,
@@ -396,7 +396,7 @@ module.exports = [
     resource: 'EN 301 549 Accessibility Requirements'
   },
   {
-    domain: 'Standards and Laws',
+    domain: 'Remediating Issues',
     stem: 'What is the best reason to map product requirements to WCAG success criteria early?',
     options: [
       'It eliminates the need for usability testing',
@@ -409,7 +409,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Accessibility Program and Process Integration'
   },
   {
-    domain: 'Standards and Laws',
+    domain: 'Remediating Issues',
     stem: 'Which statement about VPAT/ACR documentation is most accurate?',
     options: [
       'It replaces all technical testing',
@@ -686,7 +686,7 @@ module.exports = [
 
   // ── Design and UX ─────────────────────────────────────────────────────────
   {
-    domain: 'Design and UX',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'Which design choice most improves cognitive accessibility for complex workflows?',
     options: [
       'Use dense paragraphs and minimal headings',
@@ -699,7 +699,7 @@ module.exports = [
     resource: 'W3C Cognitive Accessibility Guidance'
   },
   {
-    domain: 'Design and UX',
+    domain: 'Identifying Accessibility Issues',
     stem: 'A modal opens and keyboard focus remains behind it on the page. What is the primary issue?',
     options: ['Color contrast failure', 'Focus management failure', 'Language of page missing', 'No transcript available'],
     correctOption: 1,
@@ -707,7 +707,7 @@ module.exports = [
     resource: 'WAI-ARIA Authoring Practices - Dialog Pattern'
   },
   {
-    domain: 'Design and UX',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'What is the minimum purpose of alternative text for informative images?',
     options: [
       'Describe every visual detail exactly',
@@ -720,7 +720,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.1.1 (Non-text Content)'
   },
   {
-    domain: 'Design and UX',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'Which color contrast ratio is required for normal body text under WCAG AA?',
     options: ['3:1', '4.5:1', '7:1', '2:1'],
     correctOption: 1,
@@ -728,7 +728,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criterion 1.4.3 (Contrast Minimum)'
   },
   {
-    domain: 'Design and UX',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'Which practice best supports users who rely on keyboard-only navigation?',
     options: [
       'Disable focus outlines for cleaner visuals',
@@ -996,7 +996,7 @@ module.exports = [
 
   // ── Development Techniques ────────────────────────────────────────────────
   {
-    domain: 'Development Techniques',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'For a custom button component, which implementation is most accessible?',
     options: [
       '<div onclick="...">Submit</div>',
@@ -1009,7 +1009,7 @@ module.exports = [
     resource: 'HTML Accessibility Best Practices'
   },
   {
-    domain: 'Development Techniques',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'When should ARIA be used in web applications?',
     options: [
       'Always, instead of native HTML semantics',
@@ -1022,7 +1022,7 @@ module.exports = [
     resource: 'WAI-ARIA Specification and Authoring Practices'
   },
   {
-    domain: 'Development Techniques',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'A field error appears visually but is not announced by screen readers. Which change is most appropriate?',
     options: [
       'Increase font size of the error message',
@@ -1035,7 +1035,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criteria 3.3.x and ARIA live regions guidance'
   },
   {
-    domain: 'Development Techniques',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'What is the most robust way to ensure table headers are conveyed to assistive technologies?',
     options: [
       'Use visual bold text only',
@@ -1048,7 +1048,7 @@ module.exports = [
     resource: 'WCAG Techniques for Data Tables'
   },
   {
-    domain: 'Development Techniques',
+    domain: 'Creating Accessible Web Solutions',
     stem: 'What is the best way to handle skip navigation in long pages?',
     options: [
       'Use a keyboard-accessible "Skip to main content" link that becomes visible on focus',
@@ -1316,7 +1316,7 @@ module.exports = [
 
   // ── Testing and QA ────────────────────────────────────────────────────────
   {
-    domain: 'Testing and QA',
+    domain: 'Identifying Accessibility Issues',
     stem: 'Which testing strategy is most appropriate for accessibility validation?',
     options: [
       'Automated testing only',
@@ -1329,7 +1329,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Testing and Validation'
   },
   {
-    domain: 'Testing and QA',
+    domain: 'Identifying Accessibility Issues',
     stem: 'What is a primary limitation of automated accessibility scanners?',
     options: [
       'They cannot run in CI pipelines',
@@ -1342,7 +1342,7 @@ module.exports = [
     resource: 'W3C Accessibility Evaluation Resources'
   },
   {
-    domain: 'Testing and QA',
+    domain: 'Identifying Accessibility Issues',
     stem: 'What should be included in an accessibility defect report to support remediation?',
     options: [
       'Only a screenshot',
@@ -1355,7 +1355,7 @@ module.exports = [
     resource: 'Accessibility QA Reporting Practices'
   },
   {
-    domain: 'Testing and QA',
+    domain: 'Identifying Accessibility Issues',
     stem: 'During keyboard testing, focus order appears illogical. Which WCAG concept is most relevant?',
     options: ['Meaningful Sequence', 'Non-text Content', 'Time-based Media', 'Parsing'],
     correctOption: 0,
@@ -1363,7 +1363,7 @@ module.exports = [
     resource: 'WCAG 2.2 Success Criteria 1.3.2 and 2.4.3'
   },
   {
-    domain: 'Testing and QA',
+    domain: 'Identifying Accessibility Issues',
     stem: 'Why include users with disabilities in usability studies when possible?',
     options: [
       'To replace all standards-based testing',
@@ -1615,7 +1615,7 @@ module.exports = [
 
   // ── Program Management ────────────────────────────────────────────────────
   {
-    domain: 'Program Management',
+    domain: 'Remediating Issues',
     stem: 'Which role is most responsible for embedding accessibility requirements into procurement and vendor contracts?',
     options: ['Finance only', 'Product and procurement stakeholders with accessibility governance support', 'Interns only', 'No role is needed'],
     correctOption: 1,
@@ -1623,7 +1623,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Organizational Integration'
   },
   {
-    domain: 'Program Management',
+    domain: 'Remediating Issues',
     stem: 'What is the strongest KPI for sustained accessibility maturity?',
     options: [
       'Number of decorative icons on homepage',
@@ -1636,7 +1636,7 @@ module.exports = [
     resource: 'Accessibility Program Metrics Guidance'
   },
   {
-    domain: 'Program Management',
+    domain: 'Remediating Issues',
     stem: 'What is the best first response when a critical accessibility issue is found in production?',
     options: [
       'Ignore until next major redesign',
@@ -1649,7 +1649,7 @@ module.exports = [
     resource: 'Accessibility Incident Management Practices'
   },
   {
-    domain: 'Program Management',
+    domain: 'Remediating Issues',
     stem: 'Which policy statement is most aligned with an accessibility-first culture?',
     options: [
       'Accessibility is optional unless customers complain',
@@ -1662,7 +1662,7 @@ module.exports = [
     resource: 'IAAP WAS Body of Knowledge - Governance'
   },
   {
-    domain: 'Program Management',
+    domain: 'Remediating Issues',
     stem: 'What is the key purpose of an accessibility statement published by an organization?',
     options: [
       'To guarantee legal immunity',

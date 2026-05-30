@@ -161,7 +161,7 @@ onBeforeUnmount(() => {
 
     <section v-if="!attemptId && !summary" class="card">
       <h2>Start your simulated exam</h2>
-      <p>This set includes {{ total || 30 }} questions across accessibility foundations, standards, design, development, testing, and governance.</p>
+      <p>This set includes {{ total || 75 }} questions across the three WAS content outline domains: Creating Accessible Web Solutions, Identifying Accessibility Issues, and Remediating Issues.</p>
       <button :disabled="loading" @click="startPracticeTest">{{ loading ? 'Starting…' : 'Start Practice Test' }}</button>
     </section>
 
