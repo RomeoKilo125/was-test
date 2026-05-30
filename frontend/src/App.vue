@@ -9,7 +9,7 @@ const question = ref(null)
 const index = ref(0)
 const total = ref(0)
 const selectedOption = ref(null)
-const submitted = ref(false)
+const savedOption = ref(null)
 const summary = ref(null)
 const review = ref(null)
 const analysis = ref(null)
@@ -19,6 +19,8 @@ const elapsedSeconds = ref(0)
 let timerId = null
 
 const progressLabel = computed(() => `${index.value + 1} / ${total.value}`)
+const needsSubmit = computed(() => selectedOption.value !== null && selectedOption.value !== savedOption.value)
+const isAnswered = computed(() => savedOption.value !== null)
 const remainingSeconds = computed(() => Math.max(EXAM_DURATION_MINUTES * 60 - elapsedSeconds.value, 0))
 const scoreLabel = computed(() =>
   summary.value ? `${summary.value.correctTotal}/${summary.value.answeredTotal} (${summary.value.score}%)` : ''
@@ -87,8 +89,8 @@ async function loadQuestion(nextIndex) {
   question.value = payload.question
   total.value = payload.total
   index.value = payload.index
+  savedOption.value = payload.existingResponse
   selectedOption.value = payload.existingResponse
-  submitted.value = payload.existingResponse !== null
 }
 
 async function submitResponse() {
@@ -108,7 +110,21 @@ async function submitResponse() {
       })
     })
 
-    submitted.value = true
+    savedOption.value = selectedOption.value
+    await nextStep()
+  } catch (err) {
+    error.value = err.message
+  } finally {
+    loading.value = false
+  }
+}
+
+async function goBack() {
+  if (index.value === 0 || !attemptId.value) return
+  loading.value = true
+  error.value = ''
+  try {
+    await loadQuestion(index.value - 1)
   } catch (err) {
     error.value = err.message
   } finally {
@@ -117,7 +133,7 @@ async function submitResponse() {
 }
 
 async function nextStep() {
-  if (!attemptId.value || !submitted.value) {
+  if (!attemptId.value || !isAnswered.value || needsSubmit.value) {
     return
   }
 
@@ -174,7 +190,7 @@ onBeforeUnmount(() => {
 
       <h2>{{ question.stem }}</h2>
 
-      <fieldset :disabled="submitted || loading">
+      <fieldset :disabled="loading">
         <legend class="sr-only">Answer options</legend>
         <label v-for="(option, optionIndex) in question.options" :key="option" class="option">
           <input v-model="selectedOption" type="radio" :value="optionIndex" name="answer" />
@@ -183,11 +199,14 @@ onBeforeUnmount(() => {
       </fieldset>
 
       <div class="actions">
-        <button v-if="!submitted" :disabled="selectedOption === null || loading" @click="submitResponse">
+        <button v-if="index > 0" :disabled="loading" @click="goBack">
+          ← Previous
+        </button>
+        <button v-if="needsSubmit" :disabled="loading" @click="submitResponse">
           {{ loading ? 'Submitting…' : 'Submit Answer' }}
         </button>
-        <button v-else :disabled="loading" @click="nextStep">
-          {{ index + 1 >= total ? 'Finish Exam' : 'Next Question' }}
+        <button v-if="isAnswered && !needsSubmit" :disabled="loading" @click="nextStep">
+          {{ index + 1 >= total ? 'Finish Exam' : 'Next →' }}
         </button>
       </div>
     </section>
