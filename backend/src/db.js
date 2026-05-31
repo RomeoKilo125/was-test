@@ -35,7 +35,23 @@ function shouldResetSchema() {
   }
 
   const questionIds = db.prepare('SELECT id FROM question_bank').all()
-  return questionIds.some((row) => typeof row.id === 'string' && /^[0-9a-f]{16}$/i.test(row.id))
+  if (questionIds.some((row) => typeof row.id === 'string' && /^[0-9a-f]{16}$/i.test(row.id))) {
+    return true
+  }
+
+  const hasUsers = db
+    .prepare("SELECT 1 AS present FROM sqlite_master WHERE type = 'table' AND name = 'users'")
+    .get()
+  if (!hasUsers) {
+    return true
+  }
+
+  const attemptsColumns = db.prepare('PRAGMA table_info(quiz_attempts)').all()
+  if (!attemptsColumns.some((col) => col.name === 'user_id')) {
+    return true
+  }
+
+  return false
 }
 
 if (shouldResetSchema()) {
@@ -44,10 +60,18 @@ if (shouldResetSchema()) {
     DROP TABLE IF EXISTS attempt_questions;
     DROP TABLE IF EXISTS quiz_attempts;
     DROP TABLE IF EXISTS question_bank;
+    DROP TABLE IF EXISTS users;
   `)
 }
 
 db.exec(`
+  CREATE TABLE IF NOT EXISTS users (
+    id TEXT PRIMARY KEY,
+    username TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    created_at TEXT NOT NULL
+  );
+
   CREATE TABLE IF NOT EXISTS question_bank (
     id TEXT PRIMARY KEY,
     domain TEXT NOT NULL,
@@ -60,8 +84,10 @@ db.exec(`
 
   CREATE TABLE IF NOT EXISTS quiz_attempts (
     id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
     started_at TEXT NOT NULL,
-    completed_at TEXT
+    completed_at TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
   );
 
   CREATE TABLE IF NOT EXISTS attempt_questions (
