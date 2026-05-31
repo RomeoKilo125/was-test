@@ -11,7 +11,10 @@ const db = require('./db')
 const app = express()
 const port = process.env.PORT || 3000
 const frontendDistPath = path.resolve(__dirname, '..', '..', 'frontend', 'dist')
-const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-in-production'
+const JWT_SECRET = process.env.JWT_SECRET
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET environment variable is required')
+}
 
 app.use(cors())
 app.use(express.json())
@@ -45,6 +48,9 @@ function requireAuth(req, res, next) {
   try {
     const token = auth.slice(7)
     const payload = jwt.verify(token, JWT_SECRET, { algorithms: ['HS256'] })
+    if (!payload || typeof payload.sub !== 'string' || !payload.sub) {
+      return res.status(401).json({ error: 'Invalid or expired token.' })
+    }
     if (!payload || typeof payload.sub !== 'string' || !payload.sub) {
       return res.status(401).json({ error: 'Invalid or expired token.' })
     }
@@ -99,15 +105,21 @@ app.post('/api/auth/register', authLimiter, async (req, res) => {
   if (existing) {
     return res.status(409).json({ error: 'Username already taken.' })
   }
-  const passwordHash = await bcrypt.hash(password, 10)
-  const id = crypto.randomUUID()
-  const now = new Date().toISOString()
-  db.prepare('INSERT INTO users (id, username, password_hash, created_at) VALUES (?, ?, ?, ?)').run(
-    id,
-    username,
+  try {
+    db.prepare('INSERT INTO users (id, username, password_hash, created_at) VALUES (?, ?, ?, ?)').run(
+      id,
+      username,
+      passwordHash,
+      now
+    )
+  } catch (err) {
+    if (err && err.code === 'SQLITE_CONSTRAINT_UNIQUE') {
+      return res.status(409).json({ error: 'Username already taken.' })
+    }
+    throw err
+  }
     passwordHash,
     now
-  )
   const token = jwt.sign({ sub: id }, JWT_SECRET, { expiresIn: '7d' })
   return res.status(201).json({ token, username })
 })
