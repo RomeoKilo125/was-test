@@ -44,7 +44,10 @@ function requireAuth(req, res, next) {
   }
   try {
     const token = auth.slice(7)
-    const payload = jwt.verify(token, JWT_SECRET)
+    const payload = jwt.verify(token, JWT_SECRET, { algorithms: ['HS256'] })
+    if (!payload || typeof payload.sub !== 'string' || !payload.sub) {
+      return res.status(401).json({ error: 'Invalid or expired token.' })
+    }
     req.userId = payload.sub
     return next()
   } catch {
