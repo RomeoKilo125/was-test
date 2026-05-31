@@ -77,9 +77,19 @@ async function requestJson(path, options = {}) {
   }
   const response = await fetch(`${API_BASE}${path}`, { ...options, headers })
   const contentType = response.headers.get('content-type') || ''
-  const payload = contentType.includes('application/json')
-    ? await response.json()
-    : { error: (await response.text()) || response.statusText }
+  const bodyText = await response.text()
+  let payload = {}
+  if (bodyText) {
+    if (contentType.includes('application/json')) {
+      try {
+        payload = JSON.parse(bodyText)
+      } catch {
+        payload = { error: bodyText }
+      }
+    } else {
+      payload = { error: bodyText }
+    }
+  }
   if (!response.ok) {
     if (response.status === 401) {
       logout()

@@ -432,11 +432,15 @@ app.get('/api/analysis/overview', apiLimiter, requireAuth, (req, res) => {
       `
       SELECT
         qb.domain,
-        COUNT(qa.id) as responses,
-        COALESCE(SUM(CASE WHEN qa.id IS NOT NULL THEN r.is_correct ELSE 0 END), 0) as correct
+        COUNT(ur.question_id) as responses,
+        COALESCE(SUM(ur.is_correct), 0) as correct
       FROM question_bank qb
-      LEFT JOIN responses r ON r.question_id = qb.id
-      LEFT JOIN quiz_attempts qa ON qa.id = r.attempt_id AND qa.user_id = ?
+      LEFT JOIN (
+        SELECT r.question_id, r.is_correct
+        FROM responses r
+        JOIN quiz_attempts qa ON qa.id = r.attempt_id
+        WHERE qa.user_id = ?
+      ) ur ON ur.question_id = qb.id
       GROUP BY qb.domain
       ORDER BY qb.domain
     `
