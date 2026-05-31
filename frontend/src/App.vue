@@ -259,7 +259,7 @@ onBeforeUnmount(() => {
           <input
             v-model="authPassword"
             type="password"
-            autocomplete="current-password"
+            :autocomplete="authMode === 'register' ? 'new-password' : 'current-password'"
             required
             minlength="8"
           />
