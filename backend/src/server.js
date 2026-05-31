@@ -11,9 +11,7 @@ const db = require('./db')
 const app = express()
 const port = process.env.PORT || 3000
 const frontendDistPath = path.resolve(__dirname, '..', '..', 'frontend', 'dist')
-const JWT_SECRET =
-  process.env.JWT_SECRET ||
-  (process.env.NODE_ENV === 'production' ? '' : crypto.randomBytes(32).toString('hex'))
+const JWT_SECRET = process.env.JWT_SECRET
 if (!JWT_SECRET) {
   throw new Error('JWT_SECRET environment variable is required')
 }
