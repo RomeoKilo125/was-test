@@ -23,6 +23,13 @@ const authLimiter = rateLimit({
   legacyHeaders: false
 })
 
+const apiLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 300,
+  standardHeaders: 'draft-8',
+  legacyHeaders: false
+})
+
 const submitResponseLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 120,
@@ -119,7 +126,7 @@ app.post('/api/auth/login', authLimiter, async (req, res) => {
   return res.json({ token, username: user.username })
 })
 
-app.get('/api/auth/me', requireAuth, (req, res) => {
+app.get('/api/auth/me', apiLimiter, requireAuth, (req, res) => {
   const user = db.prepare('SELECT id, username, created_at FROM users WHERE id = ?').get(req.userId)
   if (!user) {
     return res.status(401).json({ error: 'User not found.' })
@@ -127,7 +134,7 @@ app.get('/api/auth/me', requireAuth, (req, res) => {
   return res.json({ id: user.id, username: user.username, createdAt: user.created_at })
 })
 
-app.post('/api/attempts', requireAuth, (req, res) => {
+app.post('/api/attempts', apiLimiter, requireAuth, (req, res) => {
   const attemptId = crypto.randomUUID()
   const now = new Date().toISOString()
 
@@ -182,7 +189,7 @@ app.post('/api/attempts', requireAuth, (req, res) => {
   })
 })
 
-app.get('/api/attempts/:attemptId/questions/:index', requireAuth, (req, res) => {
+app.get('/api/attempts/:attemptId/questions/:index', apiLimiter, requireAuth, (req, res) => {
   const { attemptId } = req.params
   const index = Number.parseInt(req.params.index, 10)
 
@@ -222,7 +229,7 @@ app.get('/api/attempts/:attemptId/questions/:index', requireAuth, (req, res) => 
   })
 })
 
-app.post('/api/attempts/:attemptId/responses', submitResponseLimiter, requireAuth, (req, res) => {
+app.post('/api/attempts/:attemptId/responses', apiLimiter, submitResponseLimiter, requireAuth, (req, res) => {
   const { attemptId } = req.params
   const { questionId, selectedOption } = req.body
 
@@ -280,7 +287,7 @@ app.post('/api/attempts/:attemptId/responses', submitResponseLimiter, requireAut
   })
 })
 
-app.get('/api/attempts/:attemptId/summary', requireAuth, (req, res) => {
+app.get('/api/attempts/:attemptId/summary', apiLimiter, requireAuth, (req, res) => {
   const { attemptId } = req.params
   const attempt = getAttemptOr404(res, attemptId, req.userId)
   if (!attempt) {
@@ -346,7 +353,7 @@ app.get('/api/attempts/:attemptId/summary', requireAuth, (req, res) => {
   })
 })
 
-app.get('/api/attempts/:attemptId/review', requireAuth, (req, res) => {
+app.get('/api/attempts/:attemptId/review', apiLimiter, requireAuth, (req, res) => {
   const { attemptId } = req.params
   if (!getAttemptOr404(res, attemptId, req.userId)) {
     return
@@ -390,7 +397,7 @@ app.get('/api/attempts/:attemptId/review', requireAuth, (req, res) => {
   return res.json({ attemptId, questions: rows })
 })
 
-app.get('/api/analysis/overview', requireAuth, (req, res) => {
+app.get('/api/analysis/overview', apiLimiter, requireAuth, (req, res) => {
   const overall = db
     .prepare(
       `
