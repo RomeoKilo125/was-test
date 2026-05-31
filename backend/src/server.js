@@ -11,7 +11,9 @@ const db = require('./db')
 const app = express()
 const port = process.env.PORT || 3000
 const frontendDistPath = path.resolve(__dirname, '..', '..', 'frontend', 'dist')
-const JWT_SECRET = process.env.JWT_SECRET
+const JWT_SECRET =
+  process.env.JWT_SECRET ||
+  (process.env.NODE_ENV === 'production' ? '' : crypto.randomBytes(32).toString('hex'))
 if (!JWT_SECRET) {
   throw new Error('JWT_SECRET environment variable is required')
 }
@@ -48,9 +50,6 @@ function requireAuth(req, res, next) {
   try {
     const token = auth.slice(7)
     const payload = jwt.verify(token, JWT_SECRET, { algorithms: ['HS256'] })
-    if (!payload || typeof payload.sub !== 'string' || !payload.sub) {
-      return res.status(401).json({ error: 'Invalid or expired token.' })
-    }
     if (!payload || typeof payload.sub !== 'string' || !payload.sub) {
       return res.status(401).json({ error: 'Invalid or expired token.' })
     }
@@ -105,6 +104,9 @@ app.post('/api/auth/register', authLimiter, async (req, res) => {
   if (existing) {
     return res.status(409).json({ error: 'Username already taken.' })
   }
+  const id = crypto.randomUUID()
+  const passwordHash = await bcrypt.hash(password, 12)
+  const now = new Date().toISOString()
   try {
     db.prepare('INSERT INTO users (id, username, password_hash, created_at) VALUES (?, ?, ?, ?)').run(
       id,
@@ -118,8 +120,6 @@ app.post('/api/auth/register', authLimiter, async (req, res) => {
     }
     throw err
   }
-    passwordHash,
-    now
   const token = jwt.sign({ sub: id }, JWT_SECRET, { expiresIn: '7d' })
   return res.status(201).json({ token, username })
 })
@@ -422,9 +422,10 @@ app.get('/api/analysis/overview', apiLimiter, requireAuth, (req, res) => {
         COALESCE(SUM(r.is_correct), 0) as correct
       FROM quiz_attempts qa
       LEFT JOIN responses r ON r.attempt_id = qa.id
+      WHERE qa.user_id = ?
     `
     )
-    .get()
+    .get(req.userId)
 
   const domainStats = db
     .prepare(
