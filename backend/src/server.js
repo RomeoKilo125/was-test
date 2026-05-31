@@ -1,6 +1,8 @@
+const bcrypt = require('bcryptjs')
 const cors = require('cors')
 const crypto = require('crypto')
 const express = require('express')
+const jwt = require('jsonwebtoken')
 const rateLimit = require('express-rate-limit')
 const fs = require('fs')
 const path = require('path')
@@ -9,9 +11,17 @@ const db = require('./db')
 const app = express()
 const port = process.env.PORT || 3000
 const frontendDistPath = path.resolve(__dirname, '..', '..', 'frontend', 'dist')
+const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-in-production'
 
 app.use(cors())
 app.use(express.json())
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  standardHeaders: 'draft-8',
+  legacyHeaders: false
+})
 
 const submitResponseLimiter = rateLimit({
   windowMs: 60 * 1000,
@@ -20,10 +30,29 @@ const submitResponseLimiter = rateLimit({
   legacyHeaders: false
 })
 
-function getAttemptOr404(res, attemptId) {
+function requireAuth(req, res, next) {
+  const auth = req.headers.authorization
+  if (!auth || !auth.startsWith('Bearer ')) {
+    return res.status(401).json({ error: 'Authentication required.' })
+  }
+  try {
+    const token = auth.slice(7)
+    const payload = jwt.verify(token, JWT_SECRET)
+    req.userId = payload.sub
+    return next()
+  } catch {
+    return res.status(401).json({ error: 'Invalid or expired token.' })
+  }
+}
+
+function getAttemptOr404(res, attemptId, userId) {
   const attempt = db.prepare('SELECT * FROM quiz_attempts WHERE id = ?').get(attemptId)
   if (!attempt) {
     res.status(404).json({ error: 'Quiz attempt not found.' })
+    return null
+  }
+  if (userId && attempt.user_id !== userId) {
+    res.status(403).json({ error: 'Access denied.' })
     return null
   }
   return attempt
@@ -46,7 +75,59 @@ app.get('/api/health', (req, res) => {
   res.json({ ok: true })
 })
 
-app.post('/api/attempts', (req, res) => {
+const USERNAME_RE = /^[a-zA-Z0-9_]{3,30}$/
+
+app.post('/api/auth/register', authLimiter, async (req, res) => {
+  const { username, password } = req.body
+  if (typeof username !== 'string' || !USERNAME_RE.test(username)) {
+    return res.status(400).json({ error: 'Username must be 3–30 alphanumeric characters or underscores.' })
+  }
+  if (typeof password !== 'string' || password.length < 8 || password.length > 72) {
+    return res.status(400).json({ error: 'Password must be 8–72 characters.' })
+  }
+  const existing = db.prepare('SELECT id FROM users WHERE username = ?').get(username)
+  if (existing) {
+    return res.status(409).json({ error: 'Username already taken.' })
+  }
+  const passwordHash = await bcrypt.hash(password, 10)
+  const id = crypto.randomUUID()
+  const now = new Date().toISOString()
+  db.prepare('INSERT INTO users (id, username, password_hash, created_at) VALUES (?, ?, ?, ?)').run(
+    id,
+    username,
+    passwordHash,
+    now
+  )
+  const token = jwt.sign({ sub: id }, JWT_SECRET, { expiresIn: '7d' })
+  return res.status(201).json({ token, username })
+})
+
+app.post('/api/auth/login', authLimiter, async (req, res) => {
+  const { username, password } = req.body
+  if (typeof username !== 'string' || typeof password !== 'string') {
+    return res.status(400).json({ error: 'Username and password are required.' })
+  }
+  const user = db.prepare('SELECT * FROM users WHERE username = ?').get(username)
+  if (!user) {
+    return res.status(401).json({ error: 'Invalid credentials.' })
+  }
+  const ok = await bcrypt.compare(password, user.password_hash)
+  if (!ok) {
+    return res.status(401).json({ error: 'Invalid credentials.' })
+  }
+  const token = jwt.sign({ sub: user.id }, JWT_SECRET, { expiresIn: '7d' })
+  return res.json({ token, username: user.username })
+})
+
+app.get('/api/auth/me', requireAuth, (req, res) => {
+  const user = db.prepare('SELECT id, username, created_at FROM users WHERE id = ?').get(req.userId)
+  if (!user) {
+    return res.status(401).json({ error: 'User not found.' })
+  }
+  return res.json({ id: user.id, username: user.username, createdAt: user.created_at })
+})
+
+app.post('/api/attempts', requireAuth, (req, res) => {
   const attemptId = crypto.randomUUID()
   const now = new Date().toISOString()
 
@@ -79,14 +160,14 @@ app.post('/api/attempts', (req, res) => {
   }
 
   const createAttempt = db.prepare(
-    'INSERT INTO quiz_attempts (id, started_at, completed_at) VALUES (?, ?, NULL)'
+    'INSERT INTO quiz_attempts (id, user_id, started_at, completed_at) VALUES (?, ?, ?, NULL)'
   )
   const assignQuestion = db.prepare(
     'INSERT INTO attempt_questions (attempt_id, sequence, question_id) VALUES (?, ?, ?)'
   )
 
   const tx = db.transaction(() => {
-    createAttempt.run(attemptId, now)
+    createAttempt.run(attemptId, req.userId, now)
     poolIds.forEach((questionId, sequence) => {
       assignQuestion.run(attemptId, sequence, questionId)
     })
@@ -101,7 +182,7 @@ app.post('/api/attempts', (req, res) => {
   })
 })
 
-app.get('/api/attempts/:attemptId/questions/:index', (req, res) => {
+app.get('/api/attempts/:attemptId/questions/:index', requireAuth, (req, res) => {
   const { attemptId } = req.params
   const index = Number.parseInt(req.params.index, 10)
 
@@ -109,7 +190,7 @@ app.get('/api/attempts/:attemptId/questions/:index', (req, res) => {
     return res.status(400).json({ error: 'Question index must be a non-negative integer.' })
   }
 
-  if (!getAttemptOr404(res, attemptId)) {
+  if (!getAttemptOr404(res, attemptId, req.userId)) {
     return
   }
 
@@ -141,11 +222,11 @@ app.get('/api/attempts/:attemptId/questions/:index', (req, res) => {
   })
 })
 
-app.post('/api/attempts/:attemptId/responses', submitResponseLimiter, (req, res) => {
+app.post('/api/attempts/:attemptId/responses', submitResponseLimiter, requireAuth, (req, res) => {
   const { attemptId } = req.params
   const { questionId, selectedOption } = req.body
 
-  if (!getAttemptOr404(res, attemptId)) {
+  if (!getAttemptOr404(res, attemptId, req.userId)) {
     return
   }
 
@@ -199,9 +280,9 @@ app.post('/api/attempts/:attemptId/responses', submitResponseLimiter, (req, res)
   })
 })
 
-app.get('/api/attempts/:attemptId/summary', (req, res) => {
+app.get('/api/attempts/:attemptId/summary', requireAuth, (req, res) => {
   const { attemptId } = req.params
-  const attempt = getAttemptOr404(res, attemptId)
+  const attempt = getAttemptOr404(res, attemptId, req.userId)
   if (!attempt) {
     return
   }
@@ -265,9 +346,9 @@ app.get('/api/attempts/:attemptId/summary', (req, res) => {
   })
 })
 
-app.get('/api/attempts/:attemptId/review', (req, res) => {
+app.get('/api/attempts/:attemptId/review', requireAuth, (req, res) => {
   const { attemptId } = req.params
-  if (!getAttemptOr404(res, attemptId)) {
+  if (!getAttemptOr404(res, attemptId, req.userId)) {
     return
   }
 
@@ -309,7 +390,7 @@ app.get('/api/attempts/:attemptId/review', (req, res) => {
   return res.json({ attemptId, questions: rows })
 })
 
-app.get('/api/analysis/overview', (req, res) => {
+app.get('/api/analysis/overview', requireAuth, (req, res) => {
   const overall = db
     .prepare(
       `

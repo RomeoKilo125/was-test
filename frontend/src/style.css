@@ -140,3 +140,56 @@ button:disabled {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+.btn-link:hover {
+  color: #1e40af;
+}
+
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.field-label input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 22rem;
+}
+
+.field-label input:focus {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+  border-color: #1d4ed8;
+}
+
+.auth-toggle {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
