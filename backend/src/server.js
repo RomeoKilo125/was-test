@@ -1,3 +1,6 @@
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') })
+
 const bcrypt = require('bcryptjs')
 const cors = require('cors')
 const crypto = require('crypto')
@@ -5,7 +8,6 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const rateLimit = require('express-rate-limit')
 const fs = require('fs')
-const path = require('path')
 const db = require('./db')
 
 const app = express()
@@ -172,7 +174,7 @@ app.post('/api/attempts', apiLimiter, requireAuth, (req, res) => {
   // Fisher-Yates shuffle so questions from different domains are interleaved
   for (let i = poolIds.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[poolIds[i], poolIds[j]] = [poolIds[j], poolIds[i]]
+      ;[poolIds[i], poolIds[j]] = [poolIds[j], poolIds[i]]
   }
 
   if (poolIds.length === 0) {
