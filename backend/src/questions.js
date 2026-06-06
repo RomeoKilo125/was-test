@@ -2524,5 +2524,1400 @@ module.exports = [
     correctOption: 1,
     explanation: 'Inline error messages that identify the field and describe the error in plain language help users understand and correct mistakes, satisfying WCAG 3.3.1 and 3.3.3.',
     resource: 'WCAG 2.2 SC 3.3.1 (Error Identification) and SC 3.3.3 (Error Suggestion)'
+  },
+  {
+    key: 'q201',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Under WCAG 2.2 SC 3.2.6 (Consistent Help), what is required when human support options appear across a checkout process?',
+    options: [
+      'Help must appear in exactly the same visual style on every step',
+      'If a help mechanism appears on multiple steps, it should appear in the same relative order',
+      'Help must always be voice-based support only',
+      'Help is only required on the first page of the process'
+    ],
+    correctOption: 1,
+    explanation: 'SC 3.2.6 requires consistency of help mechanisms in the same relative order when repeated across steps.',
+    resource: 'WCAG 2.2 Success Criterion 3.2.6 (Consistent Help)'
+  },
+  {
+    key: 'q202',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'A login flow blocks paste in password and one-time code fields. Which WCAG 2.2 criterion is most directly at risk?',
+    options: [
+      'SC 1.3.1 (Info and Relationships)',
+      'SC 2.4.5 (Multiple Ways)',
+      'SC 3.3.8 (Accessible Authentication - Minimum)',
+      'SC 4.1.3 (Status Messages)'
+    ],
+    correctOption: 2,
+    explanation: 'Blocking paste can force transcription and cognitive burden, which conflicts with SC 3.3.8 expectations.',
+    resource: 'WCAG 2.2 Success Criterion 3.3.8 (Accessible Authentication - Minimum)'
+  },
+  {
+    key: 'q203',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which implementation best supports SC 3.3.7 (Redundant Entry) in a multi-step form?',
+    options: [
+      'Clear every field when the user returns to a previous step',
+      'Require users to retype address fields for fraud prevention in all cases',
+      'Offer a prefilled billing address with an option to edit',
+      'Disable browser autocomplete so entries stay manual'
+    ],
+    correctOption: 2,
+    explanation: 'Prefill with edit capability reduces repeated input burden while preserving user control.',
+    resource: 'WCAG 2.2 Success Criterion 3.3.7 (Redundant Entry)'
+  },
+  {
+    key: 'q204',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'For SC 2.4.13 (Focus Appearance), which statement is correct?',
+    options: [
+      'Any 1px dotted outline always passes',
+      'Only contrast with adjacent background matters',
+      'Focus indicator needs sufficient area and state-change contrast',
+      'Focus indicators are optional if hover styles exist'
+    ],
+    correctOption: 2,
+    explanation: 'SC 2.4.13 requires minimum indicator area and at least 3:1 change between focused and unfocused states.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.13 (Focus Appearance)'
+  },
+  {
+    key: 'q205',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which pattern best satisfies SC 2.5.2 (Pointer Cancellation) for a destructive action button?',
+    options: [
+      'Execute delete on pointer down with no undo',
+      'Execute on pointer up and provide undo',
+      'Execute on hover after 500ms',
+      'Execute on double-click only'
+    ],
+    correctOption: 1,
+    explanation: 'Pointer cancellation allows completion on up-event with abort/undo behavior.',
+    resource: 'WCAG 2.2 Success Criterion 2.5.2 (Pointer Cancellation)'
+  },
+  {
+    key: 'q206',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which approach best aligns with SC 2.5.1 (Pointer Gestures) for map zoom controls?',
+    options: [
+      'Require pinch only',
+      'Provide pinch and plus/minus buttons',
+      'Provide two-finger rotate only',
+      'Disable keyboard zoom to simplify behavior'
+    ],
+    correctOption: 1,
+    explanation: 'Complex multipoint gestures should have a single-pointer alternative.',
+    resource: 'WCAG 2.2 Success Criterion 2.5.1 (Pointer Gestures)'
+  },
+  {
+    key: 'q207',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Under SC 1.3.5, which field autocomplete token is most appropriate for a current password field?',
+    options: ['new-password', 'current-password', 'username', 'one-time-code'],
+    correctOption: 1,
+    explanation: 'Programmatic identification of input purpose supports personalization and authentication aids.',
+    resource: 'WCAG 2.2 Success Criterion 1.3.5 (Identify Input Purpose)'
+  },
+  {
+    key: 'q208',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'A tooltip appears on hover but disappears when the pointer moves toward it. Which criterion is most relevant?',
+    options: [
+      'SC 1.4.3 (Contrast Minimum)',
+      'SC 1.4.13 (Content on Hover or Focus)',
+      'SC 2.3.1 (Three Flashes)',
+      'SC 3.1.1 (Language of Page)'
+    ],
+    correctOption: 1,
+    explanation: 'Additional hover/focus content must be dismissible, hoverable, and persistent as required.',
+    resource: 'WCAG 2.2 Success Criterion 1.4.13 (Content on Hover or Focus)'
+  },
+  {
+    key: 'q209',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which statement about SC 2.4.11 (Focus Not Obscured - Minimum) is accurate?',
+    options: [
+      'Focused components may be fully hidden if keyboard users can guess location',
+      'Focused components must not be entirely hidden by author content',
+      'Only form fields are covered by this criterion',
+      'It applies only at Level AAA'
+    ],
+    correctOption: 1,
+    explanation: 'At Level AA, the focused component cannot be completely obscured by author-created content.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.11 (Focus Not Obscured - Minimum)'
+  },
+  {
+    key: 'q210',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'What is the key distinction between SC 3.3.8 and SC 3.3.9 for accessible authentication?',
+    options: [
+      'SC 3.3.8 is mobile-only and SC 3.3.9 is desktop-only',
+      'SC 3.3.8 allows object recognition and personal content exceptions; SC 3.3.9 is stricter',
+      'SC 3.3.8 is AAA and SC 3.3.9 is AA',
+      'There is no meaningful difference'
+    ],
+    correctOption: 1,
+    explanation: 'Enhanced (3.3.9) narrows exceptions compared with Minimum (3.3.8).',
+    resource: 'WCAG 2.2 SC 3.3.8 and SC 3.3.9'
+  },
+  {
+    key: 'q211',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which conformance requirement states that all steps in a required transaction flow must conform at the claimed level?',
+    options: [
+      'Full Pages',
+      'Complete Processes',
+      'Non-Interference',
+      'Conformance Claims'
+    ],
+    correctOption: 1,
+    explanation: 'A process claim fails if any required step in that process does not conform.',
+    resource: 'WCAG 2.2 Conformance Requirement 3 (Complete Processes)'
+  },
+  {
+    key: 'q212',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'A team uses a custom UI library control that is not interoperable with major AT. What conformance concept is most relevant?',
+    options: [
+      'Programmatic determination',
+      'Accessibility support',
+      'Conforming alternate version',
+      'Partial conformance by language'
+    ],
+    correctOption: 1,
+    explanation: 'Techniques relied upon for conformance must be accessibility supported in target environments.',
+    resource: 'WCAG 2.2 Understanding Accessibility Support'
+  },
+  {
+    key: 'q213',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which statement best reflects the first rule of ARIA?',
+    options: [
+      'Use ARIA roles on every interactive element',
+      'Prefer native HTML semantics when possible',
+      'ARIA always improves screen reader output',
+      'Replace labels with aria-label for consistency'
+    ],
+    correctOption: 1,
+    explanation: 'Native controls generally provide more robust accessibility behavior than custom ARIA patterns.',
+    resource: 'W3C ARIA in HTML - First Rule of ARIA'
+  },
+  {
+    key: 'q214',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'A custom toggle button uses div with click handlers only. What is the most complete fix?',
+    options: [
+      'Add tabindex only',
+      'Add role button only',
+      'Use native button element and expose pressed state if toggle',
+      'Add aria-hidden false'
+    ],
+    correctOption: 2,
+    explanation: 'Native button plus correct state exposure provides keyboard, semantics, and AT compatibility.',
+    resource: 'WCAG 2.2 SC 4.1.2 (Name, Role, Value)'
+  },
+  {
+    key: 'q215',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'For a modal dialog, which focus behavior is expected by accessible design patterns?',
+    options: [
+      'Leave focus on the trigger behind the modal',
+      'Move focus into dialog, trap within, then restore to trigger on close',
+      'Send focus to browser address bar',
+      'Disable keyboard navigation while modal is open'
+    ],
+    correctOption: 1,
+    explanation: 'Dialogs require managed focus entry, containment, and return to maintain operability.',
+    resource: 'WAI-ARIA Authoring Practices - Dialog Pattern'
+  },
+  {
+    key: 'q216',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which implementation best supports SC 4.1.3 for asynchronous save confirmation?',
+    options: [
+      'Show green text visually only',
+      'Move keyboard focus to a non-interactive message',
+      'Use status role or aria-live so message is announced without focus move',
+      'Reload the page so users notice change'
+    ],
+    correctOption: 2,
+    explanation: 'Status updates should be programmatically exposed without forcing focus shifts.',
+    resource: 'WCAG 2.2 Success Criterion 4.1.3 (Status Messages)'
+  },
+  {
+    key: 'q217',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'What is the most accessible default for opening links to external resources?',
+    options: [
+      'Always open in new tab with no warning',
+      'Open in same context unless user has clear warning and purpose for new context',
+      'Open in popup windows only',
+      'Prevent keyboard activation on external links'
+    ],
+    correctOption: 1,
+    explanation: 'Unexpected context changes can disorient users; new contexts should be predictable and communicated.',
+    resource: 'WCAG 2.2 SC 3.2.5 (Change on Request)'
+  },
+  {
+    key: 'q218',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'For required fields, which pattern best meets accessibility expectations?',
+    options: [
+      'Color-only indicator',
+      'Asterisk only with no explanation',
+      'Programmatic required state plus visible text/instruction',
+      'Placeholder text as sole indicator'
+    ],
+    correctOption: 2,
+    explanation: 'Users need visible and programmatic cues, not color-only or placeholder-only signals.',
+    resource: 'WCAG 2.2 SC 1.3.1 and 3.3.2'
+  },
+  {
+    key: 'q219',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which method best supports users who rely on speech input for command activation?',
+    options: [
+      'Use icon-only buttons without labels',
+      'Match accessible names to visible labels where possible',
+      'Hide labels visually and expose random aria-label text',
+      'Use keyboard shortcuts only'
+    ],
+    correctOption: 1,
+    explanation: 'Label in Name supports voice command parity with what users see on screen.',
+    resource: 'WCAG 2.2 Success Criterion 2.5.3 (Label in Name)'
+  },
+  {
+    key: 'q220',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'In a composite widget like tabs, when is roving tabindex commonly appropriate?',
+    options: [
+      'Never, it always violates WCAG',
+      'When one active descendant should be tab-stop and arrow keys move within set',
+      'Only in native select elements',
+      'Only when JavaScript is disabled'
+    ],
+    correctOption: 1,
+    explanation: 'Roving tabindex is a common APG pattern for composite keyboard interactions.',
+    resource: 'WAI-ARIA Authoring Practices - Keyboard Interaction Patterns'
+  },
+  {
+    key: 'q221',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which text alternative strategy is best for a functional icon button that opens search?',
+    options: [
+      'Empty alt text',
+      'Alt text read as file name',
+      'Accessible name expressing action, such as Search',
+      'No text alternative if icon is familiar'
+    ],
+    correctOption: 2,
+    explanation: 'Functional controls need action-oriented names that communicate purpose.',
+    resource: 'WCAG 2.2 SC 1.1.1 and SC 4.1.2'
+  },
+  {
+    key: 'q222',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'A data table has grouped column headers. Which markup is most robust?',
+    options: [
+      'Use only visual bold styling',
+      'Use th with correct scope or headers relationships',
+      'Replace table with div grid without semantics',
+      'Provide CSV link only'
+    ],
+    correctOption: 1,
+    explanation: 'Programmatic header associations are required for accurate AT navigation.',
+    resource: 'WCAG Techniques for Data Tables'
+  },
+  {
+    key: 'q223',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which scenario is most likely to fail SC 2.1.2 (No Keyboard Trap)?',
+    options: [
+      'A modal can be closed with Escape and returns focus',
+      'A rich text editor allows Tab to move out normally',
+      'A custom widget captures Tab and provides no keyboard exit',
+      'A dropdown opens with Enter'
+    ],
+    correctOption: 2,
+    explanation: 'Users must always be able to move focus away using keyboard methods.',
+    resource: 'WCAG 2.2 Success Criterion 2.1.2 (No Keyboard Trap)'
+  },
+  {
+    key: 'q224',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'For SC 2.2.1 (Timing Adjustable), which implementation is most compliant?',
+    options: [
+      'Silent timeout after 60 seconds',
+      'Warning with extension option and repeated extensions',
+      'Forced refresh every 30 seconds',
+      'Timeout disabled for mouse users only'
+    ],
+    correctOption: 1,
+    explanation: 'Users need warning and the ability to extend or adjust in most timed scenarios.',
+    resource: 'WCAG 2.2 Success Criterion 2.2.1 (Timing Adjustable)'
+  },
+  {
+    key: 'q225',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'What does SC 2.5.8 spacing exception allow for undersized targets?',
+    options: [
+      'No exceptions exist',
+      'Undersized targets are allowed if spacing prevents overlap of 24px circles',
+      'Any inline icon may be 1px if colored red',
+      'Only mobile apps can use exceptions'
+    ],
+    correctOption: 1,
+    explanation: 'WCAG 2.2 allows undersized targets when adequate separation is provided.',
+    resource: 'WCAG 2.2 Success Criterion 2.5.8 (Target Size - Minimum)'
+  },
+  {
+    key: 'q226',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which is a valid way to satisfy SC 3.3.4 for high-risk submissions?',
+    options: [
+      'Submit immediately with no review',
+      'Provide reversible submission or review-confirm step',
+      'Require CAPTCHA before final submit only',
+      'Disable browser back button'
+    ],
+    correctOption: 1,
+    explanation: 'Error prevention for legal/financial/data operations requires reversible, checked, or confirmed workflows.',
+    resource: 'WCAG 2.2 Success Criterion 3.3.4 (Error Prevention - Legal, Financial, Data)'
+  },
+  {
+    key: 'q227',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'A control has visible label Add card but accessible name Submit. Which criterion is most directly implicated?',
+    options: [
+      'SC 2.5.3 (Label in Name)',
+      'SC 1.4.3 (Contrast Minimum)',
+      'SC 2.4.2 (Page Titled)',
+      'SC 3.1.1 (Language of Page)'
+    ],
+    correctOption: 0,
+    explanation: 'Accessible name should contain visible label text for speech and cognitive consistency.',
+    resource: 'WCAG 2.2 Success Criterion 2.5.3 (Label in Name)'
+  },
+  {
+    key: 'q228',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which method best supports SC 1.2.4 for live webinars?',
+    options: [
+      'Transcript posted a week later only',
+      'Real-time captions during live audio',
+      'Autoplay recording with no controls',
+      'Audio description only'
+    ],
+    correctOption: 1,
+    explanation: 'Live synchronized media requires captions for spoken content.',
+    resource: 'WCAG 2.2 Success Criterion 1.2.4 (Captions - Live)'
+  },
+  {
+    key: 'q229',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which conformance statement is correct regarding Level AAA?',
+    options: [
+      'AAA is recommended as mandatory policy for all sites',
+      'AAA can be difficult to satisfy for all content and is not recommended as universal policy baseline',
+      'AAA is lower than AA in strictness',
+      'AAA applies only to native apps'
+    ],
+    correctOption: 1,
+    explanation: 'WCAG notes that requiring AAA across entire sites is generally not recommended.',
+    resource: 'WCAG 2.2 Understanding Conformance'
+  },
+  {
+    key: 'q230',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'What is the best interpretation of SC 3.1.2 (Language of Parts)?',
+    options: [
+      'Only the page lang attribute matters',
+      'Different-language phrases should be programmatically identified unless excepted',
+      'Only headings need language tags',
+      'Language metadata is optional for all content'
+    ],
+    correctOption: 1,
+    explanation: 'Screen readers need language changes marked to apply correct pronunciation rules.',
+    resource: 'WCAG 2.2 Success Criterion 3.1.2 (Language of Parts)'
+  },
+  {
+    key: 'q231',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which approach best meets SC 2.4.5 for a documentation site?',
+    options: [
+      'Single linear page only',
+      'Provide both search and table of contents navigation',
+      'Hide navigation for keyboard users',
+      'Require URL guessing for deep pages'
+    ],
+    correctOption: 1,
+    explanation: 'Multiple ways to locate pages improve discoverability and reduce navigation burden.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.5 (Multiple Ways)'
+  },
+  {
+    key: 'q232',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'A chart uses only color to distinguish series. What is the strongest fix?',
+    options: [
+      'Increase saturation only',
+      'Add patterns/labels plus legend and accessible summary',
+      'Use tooltips only on hover',
+      'Add animation to separate series'
+    ],
+    correctOption: 1,
+    explanation: 'Non-color cues and equivalent text support users with color-vision and cognitive differences.',
+    resource: 'WCAG 2.2 SC 1.4.1 (Use of Color) and SC 1.1.1'
+  },
+  {
+    key: 'q233',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'For links embedded in long prose, what helps satisfy SC 2.4.4 most reliably?',
+    options: [
+      'Use repeated Learn more text everywhere',
+      'Use descriptive link text or programmatically determined context',
+      'Hide all link text visually',
+      'Replace links with onclick spans'
+    ],
+    correctOption: 1,
+    explanation: 'Link purpose should be determinable from text alone or valid context.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.4 (Link Purpose - In Context)'
+  },
+  {
+    key: 'q234',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which statement about browser defaults and focus styling is most accurate?',
+    options: [
+      'Removing outlines is safe if hover style exists',
+      'Default focus styles are always sufficient in all contexts',
+      'Custom focus styles must preserve visibility and contrast',
+      'Focus indicators are required only for forms'
+    ],
+    correctOption: 2,
+    explanation: 'When authors modify focus styling, indicators must remain visible and perceivable.',
+    resource: 'WCAG 2.2 SC 2.4.7 and SC 1.4.11'
+  },
+  {
+    key: 'q235',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which scenario most clearly satisfies SC 3.3.5 (Help)?',
+    options: [
+      'No support options on any page',
+      'Consistently available contextual help for complex form steps',
+      'Help appears only after three failed submissions',
+      'Help is image-only with no text'
+    ],
+    correctOption: 1,
+    explanation: 'Accessible, available help supports users in completing tasks, especially complex forms.',
+    resource: 'WCAG 2.2 Success Criterion 3.3.5 (Help)'
+  },
+  {
+    key: 'q236',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'In authentication UX, which design both supports security and accessibility?',
+    options: [
+      'Disable password managers',
+      'Allow passkeys or device-based auth alternatives',
+      'Require memorized security question answers only',
+      'Force CAPTCHA on every login attempt'
+    ],
+    correctOption: 1,
+    explanation: 'Alternative methods like passkeys can reduce cognitive barriers while maintaining strong security.',
+    resource: 'WCAG 2.2 SC 3.3.8 and WebAuthn guidance'
+  },
+  {
+    key: 'q237',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which describes a conforming alternate version under WCAG?',
+    options: [
+      'An outdated text-only page with fewer features',
+      'A version that conforms and provides equivalent info/functionality in same language',
+      'Any PDF export of a page',
+      'A phone hotline replacing website access'
+    ],
+    correctOption: 1,
+    explanation: 'Alternate versions must be equivalent, up to date, and reachable via accessibility-supported mechanisms.',
+    resource: 'WCAG 2.2 Glossary - Conforming Alternate Version'
+  },
+  {
+    key: 'q238',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'For inline validation, which combination best supports SC 3.3.1 and SC 3.3.3?',
+    options: [
+      'Color-only red borders',
+      'Error text identifying problem plus actionable correction guidance',
+      'Generic banner saying Invalid input',
+      'Hide errors until form submit succeeds'
+    ],
+    correctOption: 1,
+    explanation: 'Users need clear identification and suggestions to recover from errors effectively.',
+    resource: 'WCAG 2.2 SC 3.3.1 and SC 3.3.3'
+  },
+  {
+    key: 'q239',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'Which interaction pattern is most robust for a custom combobox?',
+    options: [
+      'Mouse-only popup and div options',
+      'Keyboard support, ARIA semantics, and announced expanded/collapsed state',
+      'Hidden native select with no labels',
+      'Autocomplete text with no role/state exposure'
+    ],
+    correctOption: 1,
+    explanation: 'Complex custom controls require complete keyboard and semantic state modeling.',
+    resource: 'WAI-ARIA Authoring Practices - Combobox Pattern'
+  },
+  {
+    key: 'q240',
+    domain: 'Creating Accessible Web Solutions',
+    stem: 'What is the best way to support SC 2.2.2 for auto-updating dashboards?',
+    options: [
+      'Force updates every 2 seconds with no controls',
+      'Provide pause/stop/hide controls for moving/updating content',
+      'Disable keyboard focus during updates',
+      'Announce updates by playing a beep'
+    ],
+    correctOption: 1,
+    explanation: 'Users must be able to pause or stop persistent moving/updating content.',
+    resource: 'WCAG 2.2 Success Criterion 2.2.2 (Pause, Stop, Hide)'
+  },
+  {
+    key: 'q241',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A team claims AA conformance but one required checkout step fails SC 3.3.4. What is the correct finding?',
+    options: [
+      'AA still passes because only critical pages count',
+      'AA fails for that process because all required process pages must conform',
+      'AA passes if homepage conforms',
+      'AA passes if issue is in third-party payment page'
+    ],
+    correctOption: 1,
+    explanation: 'Complete processes must conform end-to-end at the claimed level.',
+    resource: 'WCAG 2.2 Conformance Requirement 3 (Complete Processes)'
+  },
+  {
+    key: 'q242',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A focus ring changes from black to dark gray, but still contrasts with background. Which likely issue remains?',
+    options: [
+      'No issue, it always passes all focus criteria',
+      'May fail SC 2.4.13 change-of-state contrast requirement',
+      'May fail SC 1.1.1 non-text alternatives',
+      'May fail SC 2.2.6 timeouts'
+    ],
+    correctOption: 1,
+    explanation: 'Focus Appearance checks contrast change between focused and unfocused states, not only adjacent contrast.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.13 (Focus Appearance)'
+  },
+  {
+    key: 'q243',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A password field shows error: Paste not allowed. Which conformance risk should be reported?',
+    options: [
+      'Potential SC 3.3.8 failure due to forced transcription',
+      'Potential SC 1.4.12 failure due to spacing',
+      'Potential SC 2.3.1 failure due to flashing',
+      'Potential SC 1.2.2 failure due to missing captions'
+    ],
+    correctOption: 0,
+    explanation: 'Preventing paste can create unnecessary cognitive load in authentication.',
+    resource: 'WCAG 2.2 SC 3.3.8 (Accessible Authentication - Minimum)'
+  },
+  {
+    key: 'q244',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A multi-step form asks for the same employee ID at steps 1 and 4 with no prefill. Which criterion is most relevant?',
+    options: [
+      'SC 3.3.7 (Redundant Entry)',
+      'SC 1.4.11 (Non-text Contrast)',
+      'SC 2.4.7 (Focus Visible)',
+      'SC 2.5.5 (Target Size Enhanced)'
+    ],
+    correctOption: 0,
+    explanation: 'Repeated required data entry in same process should be auto-populated or selectable, unless excepted.',
+    resource: 'WCAG 2.2 SC 3.3.7 (Redundant Entry)'
+  },
+  {
+    key: 'q245',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'During keyboard testing, a sticky cookie banner covers focused links at page bottom. What is the likely failure?',
+    options: [
+      'SC 2.4.11 (Focus Not Obscured - Minimum)',
+      'SC 1.3.4 (Orientation)',
+      'SC 3.1.5 (Reading Level)',
+      'SC 4.1.1 (Parsing)'
+    ],
+    correctOption: 0,
+    explanation: 'Focused components cannot be entirely obscured by author-created overlays.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.11 (Focus Not Obscured - Minimum)'
+  },
+  {
+    key: 'q246',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A custom slider is operable by mouse drag only. Which issue classification is most appropriate?',
+    options: [
+      'Only visual design issue',
+      'Potential failures of keyboard operability and dragging alternative requirements',
+      'No issue if touch works',
+      'Only documentation issue'
+    ],
+    correctOption: 1,
+    explanation: 'Custom controls must support keyboard operation and drag alternatives where applicable.',
+    resource: 'WCAG 2.2 SC 2.1.1 and SC 2.5.7'
+  },
+  {
+    key: 'q247',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A status message appears after save, but screen readers announce nothing unless focus is moved. What should be logged?',
+    options: [
+      'SC 4.1.3 status message not programmatically exposed',
+      'SC 2.4.2 page title missing',
+      'SC 2.3.2 three flashes',
+      'SC 1.4.4 resize text'
+    ],
+    correctOption: 0,
+    explanation: 'Status updates should be announced without requiring focus change.',
+    resource: 'WCAG 2.2 Success Criterion 4.1.3 (Status Messages)'
+  },
+  {
+    key: 'q248',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A field label is visible as First name, but accessible name is Given. Which likely failure?',
+    options: [
+      'SC 2.5.3 (Label in Name)',
+      'SC 1.2.1 (Audio-only)',
+      'SC 2.4.8 (Location)',
+      'SC 3.2.6 (Consistent Help)'
+    ],
+    correctOption: 0,
+    explanation: 'Mismatch between visible label text and accessible name can break voice command expectations.',
+    resource: 'WCAG 2.2 Success Criterion 2.5.3 (Label in Name)'
+  },
+  {
+    key: 'q249',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'An audit report marks site AA conformant while excluding popups from scope. What is the strongest review comment?',
+    options: [
+      'Valid because popups are not pages',
+      'Invalid because conformance applies to full pages and included functionality',
+      'Valid if popups are rare',
+      'Valid if popups are third-party only'
+    ],
+    correctOption: 1,
+    explanation: 'Conformance cannot exclude parts of pages within claimed scope.',
+    resource: 'WCAG 2.2 Conformance Requirement 2 (Full Pages)'
+  },
+  {
+    key: 'q250',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A support chat icon appears in different locations on each checkout step. Which criterion should be investigated?',
+    options: [
+      'SC 3.2.6 (Consistent Help)',
+      'SC 1.3.1 (Info and Relationships)',
+      'SC 1.4.5 (Images of Text)',
+      'SC 2.5.8 (Target Size)'
+    ],
+    correctOption: 0,
+    explanation: 'Repeated help mechanisms should maintain consistent relative placement across process steps.',
+    resource: 'WCAG 2.2 Success Criterion 3.2.6 (Consistent Help)'
+  },
+  {
+    key: 'q251',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A form clears all entries after one validation error. Which accessibility impact is most direct?',
+    options: [
+      'Increased redundant input burden and higher error recovery friction',
+      'Improved discoverability of fields',
+      'Better keyboard operability',
+      'Guaranteed conformance to SC 3.3.4'
+    ],
+    correctOption: 0,
+    explanation: 'Clearing entries can significantly hinder error recovery and increase cognitive/motor workload.',
+    resource: 'WCAG 2.2 SC 3.3.x input assistance guidance'
+  },
+  {
+    key: 'q252',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'An off-canvas menu traps Tab focus with no Escape behavior. Which issue should be prioritized?',
+    options: [
+      'SC 2.4.1 bypass blocks',
+      'SC 2.1.2 no keyboard trap',
+      'SC 1.4.10 reflow',
+      'SC 3.1.2 language of parts'
+    ],
+    correctOption: 1,
+    explanation: 'Users must have keyboard means to exit focusable regions.',
+    resource: 'WCAG 2.2 Success Criterion 2.1.2 (No Keyboard Trap)'
+  },
+  {
+    key: 'q253',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'An evaluator tests only one viewport size and misses mobile overflow defects. Which criterion might be under-tested?',
+    options: [
+      'SC 1.4.10 (Reflow)',
+      'SC 2.4.2 (Page Titled)',
+      'SC 1.1.1 (Non-text Content)',
+      'SC 3.1.3 (Unusual Words)'
+    ],
+    correctOption: 0,
+    explanation: 'Reflow assessment requires testing equivalent constraints such as 320 CSS pixels width conditions.',
+    resource: 'WCAG 2.2 Success Criterion 1.4.10 (Reflow)'
+  },
+  {
+    key: 'q254',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A custom select uses role button but does not expose expanded state. Which failure area is most likely?',
+    options: [
+      'Name, role, and state exposure',
+      'Color contrast only',
+      'Captioning media only',
+      'Conformance claim metadata only'
+    ],
+    correctOption: 0,
+    explanation: 'Interactive components must expose role and dynamic states programmatically.',
+    resource: 'WCAG 2.2 Success Criterion 4.1.2 (Name, Role, Value)'
+  },
+  {
+    key: 'q255',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'Help text is provided only via placeholder and disappears on typing. Which concern is strongest?',
+    options: [
+      'Instructions may be insufficient and lost during input',
+      'Page title likely invalid',
+      'Audio control likely fails',
+      'Focus not obscured enhanced failure'
+    ],
+    correctOption: 0,
+    explanation: 'Placeholder-only guidance is often insufficient for persistent labels/instructions.',
+    resource: 'WCAG 2.2 Success Criterion 3.3.2 (Labels or Instructions)'
+  },
+  {
+    key: 'q256',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'An image link has empty alt text and no adjacent text. What should be reported?',
+    options: [
+      'Decorative usage is correct',
+      'Likely missing accessible link purpose',
+      'Only a style issue',
+      'Only affects AAA'
+    ],
+    correctOption: 1,
+    explanation: 'Functional images need meaningful text alternatives to expose purpose.',
+    resource: 'WCAG 2.2 SC 1.1.1 and SC 2.4.4'
+  },
+  {
+    key: 'q257',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A two-factor challenge asks for 2nd, 4th, and 7th characters of a password. Which criterion is most implicated?',
+    options: [
+      'SC 3.3.8 (Accessible Authentication - Minimum)',
+      'SC 2.2.2 (Pause Stop Hide)',
+      'SC 1.4.11 (Non-text Contrast)',
+      'SC 2.4.6 (Headings and Labels)'
+    ],
+    correctOption: 0,
+    explanation: 'Character-position challenges force cognitive manipulation/transcription barriers.',
+    resource: 'WCAG 2.2 Success Criterion 3.3.8 (Accessible Authentication - Minimum)'
+  },
+  {
+    key: 'q258',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A tooltip can only be dismissed by moving mouse away, not keyboard. What likely fails?',
+    options: [
+      'SC 1.4.13 (Content on Hover or Focus)',
+      'SC 2.4.2 (Page Titled)',
+      'SC 1.2.2 (Captions)',
+      'SC 3.3.4 (Error Prevention)'
+    ],
+    correctOption: 0,
+    explanation: 'Hover/focus content must support dismissal without forcing pointer movement.',
+    resource: 'WCAG 2.2 Success Criterion 1.4.13 (Content on Hover or Focus)'
+  },
+  {
+    key: 'q259',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A report says issue fixed because axe no longer flags it, but keyboard path is still broken. What is the best assessment?',
+    options: [
+      'Resolved because automated tools are authoritative',
+      'Not resolved; manual functional testing still shows user-impacting defect',
+      'Resolved if color contrast passes',
+      'Resolved if QA approved visual review'
+    ],
+    correctOption: 1,
+    explanation: 'Automated tools do not replace manual task-based accessibility verification.',
+    resource: 'W3C Accessibility Evaluation Resources'
+  },
+  {
+    key: 'q260',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A control has visible focus only when using mouse, not keyboard. Which criterion is most direct?',
+    options: [
+      'SC 2.4.7 (Focus Visible)',
+      'SC 1.3.5 (Identify Input Purpose)',
+      'SC 3.2.3 (Consistent Navigation)',
+      'SC 4.1.3 (Status Messages)'
+    ],
+    correctOption: 0,
+    explanation: 'Keyboard-operable interfaces require a visible focus indicator.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.7 (Focus Visible)'
+  },
+  {
+    key: 'q261',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A table uses visually merged cells but no header associations. Which user impact is most likely?',
+    options: [
+      'Screen readers cannot reliably map header-context relationships',
+      'Only mouse users are affected',
+      'Page title fails',
+      'No impact if colors are high contrast'
+    ],
+    correctOption: 0,
+    explanation: 'Missing structural associations harms non-visual interpretation of data tables.',
+    resource: 'WCAG Techniques for Data Tables'
+  },
+  {
+    key: 'q262',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A drag-and-drop kanban board has no single-pointer alternative. What should be flagged?',
+    options: [
+      'Potential SC 2.5.7 failure',
+      'Potential SC 1.2.4 failure',
+      'Potential SC 3.1.1 failure',
+      'Potential SC 2.4.2 failure'
+    ],
+    correctOption: 0,
+    explanation: 'Dragging functionality should have non-drag alternatives unless essential.',
+    resource: 'WCAG 2.2 Success Criterion 2.5.7 (Dragging Movements)'
+  },
+  {
+    key: 'q263',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A page-level claim includes dynamic states but tester checked only default state. What risk is most accurate?',
+    options: [
+      'Low risk because only initial state counts',
+      'Conformance can be overstated because interactive states may fail criteria',
+      'No risk if CSS validates',
+      'No risk if JS is minified'
+    ],
+    correctOption: 1,
+    explanation: 'Accessibility must be validated across relevant states and interactions, not only initial render.',
+    resource: 'WCAG Conformance and evaluation practice'
+  },
+  {
+    key: 'q264',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'Which issue most clearly violates SC 1.3.3 (Sensory Characteristics)?',
+    options: [
+      'Instruction says click the round green button on the right',
+      'Instruction says select Save from the action menu',
+      'Instruction says complete required fields marked Required',
+      'Instruction says review all sections before submit'
+    ],
+    correctOption: 0,
+    explanation: 'Instructions should not rely only on shape, color, or visual location.',
+    resource: 'WCAG 2.2 Success Criterion 1.3.3 (Sensory Characteristics)'
+  },
+  {
+    key: 'q265',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A focus indicator meets 2.4.13 area/change tests but blends into adjacent colors. Which criterion may still fail?',
+    options: [
+      'SC 1.4.11 (Non-text Contrast)',
+      'SC 3.3.7 (Redundant Entry)',
+      'SC 2.2.1 (Timing Adjustable)',
+      'SC 1.3.5 (Identify Input Purpose)'
+    ],
+    correctOption: 0,
+    explanation: 'Focus indicators can pass state-change checks but still fail adjacent contrast requirements.',
+    resource: 'WCAG 2.2 SC 2.4.13 and SC 1.4.11'
+  },
+  {
+    key: 'q266',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A site relies on a custom plugin unsupported by major AT but provides no alternative. Which conformance requirement is threatened?',
+    options: [
+      'Only Full Pages',
+      'Only Complete Processes',
+      'Only Conformance Claims',
+      'Only Accessibility-Supported Ways of Using Technologies'
+    ],
+    correctOption: 3,
+    explanation: 'Relied-upon tech must be accessibility supported or equivalent supported access must exist.',
+    resource: 'WCAG 2.2 Conformance Requirement 4'
+  },
+  {
+    key: 'q267',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A screen reader announces two identical links: Read more. No additional context exists. What is the issue?',
+    options: [
+      'Link purpose ambiguity',
+      'Language of page missing',
+      'Audio control missing',
+      'Keyboard trap'
+    ],
+    correctOption: 0,
+    explanation: 'Users need determinable link purpose from text or valid programmatic context.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.4 (Link Purpose - In Context)'
+  },
+  {
+    key: 'q268',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A timeout warning appears for 2 seconds and then logs user out. Which requirement is most likely not met?',
+    options: [
+      'SC 2.2.1 timing adjustability expectations',
+      'SC 1.4.3 contrast minimum',
+      'SC 2.4.6 headings and labels',
+      'SC 3.1.2 language of parts'
+    ],
+    correctOption: 0,
+    explanation: 'Users typically need enough warning and practical extension mechanisms.',
+    resource: 'WCAG 2.2 Success Criterion 2.2.1 (Timing Adjustable)'
+  },
+  {
+    key: 'q269',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A complex icon-only toolbar has no accessible names but has tooltips on hover only. What should be reported first?',
+    options: [
+      'Missing programmatic control names',
+      'Insufficient page title',
+      'Missing transcript',
+      'Touch target too large'
+    ],
+    correctOption: 0,
+    explanation: 'Controls must expose accessible names independent of hover-only behaviors.',
+    resource: 'WCAG 2.2 SC 1.1.1 and SC 4.1.2'
+  },
+  {
+    key: 'q270',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A carousel auto-advances and focus jumps to each slide unexpectedly. Which likely criterion pair is impacted?',
+    options: [
+      'SC 2.2.2 and SC 3.2.1',
+      'SC 1.3.5 and SC 3.1.1',
+      'SC 1.2.2 and SC 2.3.1',
+      'SC 2.5.5 and SC 2.5.8'
+    ],
+    correctOption: 0,
+    explanation: 'Unexpected context changes plus uncontrolled motion can break predictability and control.',
+    resource: 'WCAG 2.2 SC 2.2.2 and SC 3.2.1'
+  },
+  {
+    key: 'q271',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A form label is visually present but not programmatically associated with input. What is the core defect?',
+    options: [
+      'Loss of programmatic relationship between label and control',
+      'Low contrast text',
+      'No bypass block',
+      'Missing conformance claim date'
+    ],
+    correctOption: 0,
+    explanation: 'Associations are required so AT can announce labels during input.',
+    resource: 'WCAG 2.2 SC 1.3.1 and SC 3.3.2'
+  },
+  {
+    key: 'q272',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A dropdown opens on focus and triggers navigation immediately. Which criterion is most directly violated?',
+    options: [
+      'SC 3.2.2 (On Input)',
+      'SC 2.4.11 (Focus Not Obscured)',
+      'SC 1.4.1 (Use of Color)',
+      'SC 2.5.8 (Target Size)'
+    ],
+    correctOption: 0,
+    explanation: 'Changing a setting should not automatically trigger context change without prior warning.',
+    resource: 'WCAG 2.2 Success Criterion 3.2.2 (On Input)'
+  },
+  {
+    key: 'q273',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A testing team validates only desktop keyboard and skips switch and voice workflows. What is the most accurate concern?',
+    options: [
+      'No concern if WCAG A passes',
+      'Input modality coverage may be incomplete for real-world assistive usage',
+      'Only color contrast is affected',
+      'This only matters for AAA conformance'
+    ],
+    correctOption: 1,
+    explanation: 'Equivalent operability across input modalities is important for practical accessibility.',
+    resource: 'WCAG 2.2 Guideline 2.5 (Input Modalities)'
+  },
+  {
+    key: 'q274',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A site uses repeated assistance links, but one page changes label to Need guidance and moves it to footer. Which criterion may fail?',
+    options: [
+      'SC 3.2.6 (Consistent Help)',
+      'SC 2.3.3 (Animation from Interactions)',
+      'SC 1.4.12 (Text Spacing)',
+      'SC 4.1.3 (Status Messages)'
+    ],
+    correctOption: 0,
+    explanation: 'Consistent help concerns repeated support mechanisms and relative order consistency.',
+    resource: 'WCAG 2.2 Success Criterion 3.2.6 (Consistent Help)'
+  },
+  {
+    key: 'q275',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A page claims partial conformance due to uncontrolled ads, but ads are authored internally. What is the correct finding?',
+    options: [
+      'Claim may be invalid because content is under author control',
+      'Claim is always valid for any third-party script',
+      'Claim is valid if ad team is separate department',
+      'Claim is required for all e-commerce pages'
+    ],
+    correctOption: 0,
+    explanation: 'Partial conformance exceptions require content to be outside author control.',
+    resource: 'WCAG 2.2 Statement of Partial Conformance - Third Party Content'
+  },
+  {
+    key: 'q276',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A developer sets tabindex values to force custom focus order that conflicts with visual layout. What issue is most likely?',
+    options: [
+      'Potential SC 2.4.3 focus order problems',
+      'Potential SC 1.2.5 audio description problems',
+      'Potential SC 3.1.1 language problems',
+      'Potential SC 2.3.1 flashing problems'
+    ],
+    correctOption: 0,
+    explanation: 'Artificial tabindex sequences can break meaningful and operable navigation order.',
+    resource: 'WCAG 2.2 Success Criterion 2.4.3 (Focus Order)'
+  },
+  {
+    key: 'q277',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'An authentication flow allows password managers but blocks one-time code paste. Which outcome is most accurate?',
+    options: [
+      'Automatically passes SC 3.3.8',
+      'May still fail because every relevant authentication step must be accessible',
+      'Passes if code field has high contrast',
+      'Passes if SMS is used'
+    ],
+    correctOption: 1,
+    explanation: 'All required steps in auth path must avoid unnecessary cognitive test barriers.',
+    resource: 'WCAG 2.2 Success Criterion 3.3.8 (Accessible Authentication - Minimum)'
+  },
+  {
+    key: 'q278',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A selector shows required state only through icon color change from gray to blue. Which criterion is most likely involved?',
+    options: [
+      'SC 1.4.1 (Use of Color)',
+      'SC 2.5.3 (Label in Name)',
+      'SC 3.2.5 (Change on Request)',
+      'SC 2.2.1 (Timing Adjustable)'
+    ],
+    correctOption: 0,
+    explanation: 'Color-only status communication excludes users who cannot perceive color differences reliably.',
+    resource: 'WCAG 2.2 Success Criterion 1.4.1 (Use of Color)'
+  },
+  {
+    key: 'q279',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A site uses two-dimensional scrolling for a regular paragraph at 400% zoom. Which likely failure?',
+    options: [
+      'SC 1.4.10 reflow failure for standard text content',
+      'SC 1.2.2 captioning failure',
+      'SC 4.1.3 status message failure',
+      'SC 3.2.3 consistent navigation failure'
+    ],
+    correctOption: 0,
+    explanation: 'Standard text content should reflow without horizontal scrolling under required conditions.',
+    resource: 'WCAG 2.2 Success Criterion 1.4.10 (Reflow)'
+  },
+  {
+    key: 'q280',
+    domain: 'Identifying Accessibility Issues',
+    stem: 'A QA checklist says AAA can be claimed because all AA issues were fixed. What is the correct response?',
+    options: [
+      'Correct, AAA is implied by AA',
+      'Incorrect, AAA requires satisfying A, AA, and AAA criteria',
+      'Correct if legal team approves',
+      'Correct if there is a VPAT'
+    ],
+    correctOption: 1,
+    explanation: 'Conformance levels are cumulative and require full satisfaction at each level.',
+    resource: 'WCAG 2.2 Conformance Levels'
+  },
+  {
+    key: 'q281',
+    domain: 'Remediating Issues',
+    stem: 'You can only fix three defects before release. Which prioritization approach is strongest?',
+    options: [
+      'Fix easiest defects first',
+      'Prioritize by user impact, task blockage, and legal risk',
+      'Prioritize visual polish issues',
+      'Prioritize only automated-tool findings'
+    ],
+    correctOption: 1,
+    explanation: 'Effective remediation balances severity, frequency, and critical user journey impact.',
+    resource: 'Accessibility QA Reporting and Remediation Prioritization Practices'
+  },
+  {
+    key: 'q282',
+    domain: 'Remediating Issues',
+    stem: 'A component library has repeated focus visibility defects across products. What is the best remediation strategy?',
+    options: [
+      'Fix each app individually forever',
+      'Patch design system tokens/components and propagate updates',
+      'Suppress defects in reports',
+      'Move issue to backlog with no owner'
+    ],
+    correctOption: 1,
+    explanation: 'System-level fixes reduce recurrence and improve consistency across teams.',
+    resource: 'IAAP WAS BoK - Programmatic Accessibility Integration'
+  },
+  {
+    key: 'q283',
+    domain: 'Remediating Issues',
+    stem: 'A form has dozens of unlabeled custom inputs. Which remediation order is most effective?',
+    options: [
+      'Fix color contrast first',
+      'Add programmatic names/labels first, then refine instructions/errors',
+      'Rewrite CSS only',
+      'Defer until performance sprint'
+    ],
+    correctOption: 1,
+    explanation: 'Restoring core semantics unlocks baseline operability and AT comprehension first.',
+    resource: 'WCAG 2.2 SC 1.3.1, SC 3.3.2, SC 4.1.2'
+  },
+  {
+    key: 'q284',
+    domain: 'Remediating Issues',
+    stem: 'When remediating a keyboard trap in a custom widget, what should be verified before closing?',
+    options: [
+      'Only that Tab enters component',
+      'That users can enter, operate, and exit using standard keyboard patterns',
+      'That mouse users can click through',
+      'That Lighthouse score improves'
+    ],
+    correctOption: 1,
+    explanation: 'Closure requires end-to-end keyboard operability, not a partial movement check.',
+    resource: 'WCAG 2.2 SC 2.1.1 and SC 2.1.2'
+  },
+  {
+    key: 'q285',
+    domain: 'Remediating Issues',
+    stem: 'A team fixed visible errors but screen reader announcement is still missing. What remediation action is next?',
+    options: [
+      'Increase font size of error text',
+      'Expose error/status via semantic association or live region behavior',
+      'Change brand colors',
+      'Move form to PDF'
+    ],
+    correctOption: 1,
+    explanation: 'Remediation should ensure assistive technologies receive equivalent error/status feedback.',
+    resource: 'WCAG 2.2 SC 3.3.1 and SC 4.1.3'
+  },
+  {
+    key: 'q286',
+    domain: 'Remediating Issues',
+    stem: 'Which fix best addresses repeated redundant-entry failures in a checkout process?',
+    options: [
+      'Disable browser back and forward navigation',
+      'Carry forward prior entered values with explicit edit controls',
+      'Require account creation first',
+      'Increase timeout threshold only'
+    ],
+    correctOption: 1,
+    explanation: 'Persisted, editable data reduces repeated effort and improves completion rates.',
+    resource: 'WCAG 2.2 Success Criterion 3.3.7 (Redundant Entry)'
+  },
+  {
+    key: 'q287',
+    domain: 'Remediating Issues',
+    stem: 'What is the most maintainable remediation for repeated low-contrast focus indicators?',
+    options: [
+      'One-off overrides in each page stylesheet',
+      'Centralize accessible focus token and component-level defaults',
+      'Remove all outlines',
+      'Require browser zoom to 200%'
+    ],
+    correctOption: 1,
+    explanation: 'Tokenized system fixes prevent regressions and ensure consistent focus treatment.',
+    resource: 'Design systems and WCAG focus/contrast implementation practices'
+  },
+  {
+    key: 'q288',
+    domain: 'Remediating Issues',
+    stem: 'A remediation ticket says make carousel accessible. What acceptance criteria are most complete?',
+    options: [
+      'Works with mouse only',
+      'Keyboard controls, pause/stop mechanism, announced state changes',
+      'Autoplay disabled only',
+      'Contrast ratio at least 3:1 only'
+    ],
+    correctOption: 1,
+    explanation: 'Comprehensive remediation addresses operability, timing control, and AT feedback.',
+    resource: 'WCAG 2.2 SC 2.1.1, SC 2.2.2, SC 4.1.3'
+  },
+  {
+    key: 'q289',
+    domain: 'Remediating Issues',
+    stem: 'Which remediation is best when custom control semantics are unreliable across AT/browser combinations?',
+    options: [
+      'Add more ARIA roles',
+      'Refactor to native HTML control where feasible',
+      'Hide control from accessibility tree',
+      'Document workaround only'
+    ],
+    correctOption: 1,
+    explanation: 'Native elements usually provide stronger built-in semantics and interoperability.',
+    resource: 'W3C ARIA in HTML - First Rule of ARIA'
+  },
+  {
+    key: 'q290',
+    domain: 'Remediating Issues',
+    stem: 'A project has recurring accessibility regressions each sprint. Which practice most improves remediation durability?',
+    options: [
+      'Ad hoc bug fixing at end of release',
+      'Shift-left checks in design/dev plus CI and definition-of-done criteria',
+      'Quarterly accessibility training only',
+      'Manual audits once per year only'
+    ],
+    correctOption: 1,
+    explanation: 'Embedding accessibility gates early and continuously reduces recurring defects.',
+    resource: 'IAAP WAS BoK - Accessibility Process Integration'
+  },
+  {
+    key: 'q291',
+    domain: 'Remediating Issues',
+    stem: 'For auth remediation, which change best supports SC 3.3.8 immediately?',
+    options: [
+      'Block all third-party password managers',
+      'Allow paste and autocomplete tokens for username/password fields',
+      'Require rotating password every login',
+      'Add a harder CAPTCHA'
+    ],
+    correctOption: 1,
+    explanation: 'Allowing assistive mechanisms lowers cognitive burden and improves login accessibility.',
+    resource: 'WCAG 2.2 SC 3.3.8 and Technique H100'
+  },
+  {
+    key: 'q292',
+    domain: 'Remediating Issues',
+    stem: 'You must remediate inaccessible third-party widget content embedded in your page. What is the strongest response?',
+    options: [
+      'Ignore because vendor owns code',
+      'Replace, constrain, or provide conforming alternative access path and document limitations',
+      'Hide issues in conformance report',
+      'Disable keyboard to avoid inconsistency'
+    ],
+    correctOption: 1,
+    explanation: 'Page owners remain responsible for user experience and should mitigate or replace inaccessible dependencies.',
+    resource: 'WCAG Conformance and third-party content guidance'
+  },
+  {
+    key: 'q293',
+    domain: 'Remediating Issues',
+    stem: 'Which remediation metric is most meaningful for leadership reporting?',
+    options: [
+      'Raw number of issues closed',
+      'Reduction in critical task failures for assistive technology users',
+      'Total lines of CSS changed',
+      'Count of pages audited'
+    ],
+    correctOption: 1,
+    explanation: 'Outcome-based metrics tied to user task success better represent accessibility maturity.',
+    resource: 'Accessibility Program Measurement Practices'
+  },
+  {
+    key: 'q294',
+    domain: 'Remediating Issues',
+    stem: 'A component fix passes in one browser but fails in another AT combination. What is best next step?',
+    options: [
+      'Close ticket because one pass is enough',
+      'Expand compatibility testing matrix and adjust implementation to reliable cross-stack behavior',
+      'Remove AT support note from docs',
+      'Mark as wontfix'
+    ],
+    correctOption: 1,
+    explanation: 'Accessibility support depends on real interoperability across user agent and AT combinations.',
+    resource: 'WCAG 2.2 Understanding Accessibility Support'
+  },
+  {
+    key: 'q295',
+    domain: 'Remediating Issues',
+    stem: 'What is the best remediation for repeated heading-structure defects in CMS-authored content?',
+    options: [
+      'Rely on post-publish manual fixes',
+      'Enforce heading hierarchy in authoring templates and editor constraints',
+      'Convert all headings to bold paragraphs',
+      'Hide headings from screen readers'
+    ],
+    correctOption: 1,
+    explanation: 'Template and authoring guardrails prevent defect recurrence at content source.',
+    resource: 'WCAG 2.2 SC 1.3.1 and SC 2.4.6'
+  },
+  {
+    key: 'q296',
+    domain: 'Remediating Issues',
+    stem: 'When remediating non-text contrast failures for controls, what should be validated?',
+    options: [
+      'Only text contrast inside control',
+      'Visual indicators of component/state meet 3:1 against adjacent colors',
+      'Only focus outline width',
+      'Only icon size'
+    ],
+    correctOption: 1,
+    explanation: 'UI component boundaries and states must be perceivable independently of text contrast checks.',
+    resource: 'WCAG 2.2 Success Criterion 1.4.11 (Non-text Contrast)'
+  },
+  {
+    key: 'q297',
+    domain: 'Remediating Issues',
+    stem: 'Which remediation rollout plan is strongest for large legacy systems?',
+    options: [
+      'Freeze all feature work for one year',
+      'Prioritize high-traffic critical journeys, then component-level backlog by severity',
+      'Fix random pages each sprint',
+      'Only remediate issues detected by one tool'
+    ],
+    correctOption: 1,
+    explanation: 'Risk-based phased remediation is practical and reduces user harm quickly.',
+    resource: 'Enterprise Accessibility Remediation Practices'
+  },
+  {
+    key: 'q298',
+    domain: 'Remediating Issues',
+    stem: 'A remediation task says improve keyboard experience for custom grid. What is essential?',
+    options: [
+      'Arrow-key model, focus visibility, and announced row/column context',
+      'Mouse hover previews',
+      'Infinite scroll only',
+      'Animated transitions'
+    ],
+    correctOption: 0,
+    explanation: 'Complex widgets need clear keyboard interaction and semantic context exposure.',
+    resource: 'WAI-ARIA Authoring Practices - Grid Pattern'
+  },
+  {
+    key: 'q299',
+    domain: 'Remediating Issues',
+    stem: 'Which governance change most helps prevent accessibility debt from re-accumulating?',
+    options: [
+      'Treat accessibility as optional QA step',
+      'Define accessibility acceptance criteria in requirements and design reviews',
+      'Review only after customer complaints',
+      'Assign accessibility to one specialist only'
+    ],
+    correctOption: 1,
+    explanation: 'Upstream requirements and design controls reduce downstream remediation cost and recurrence.',
+    resource: 'IAAP WAS BoK - Governance and Process'
+  },
+  {
+    key: 'q300',
+    domain: 'Remediating Issues',
+    stem: 'What is the best close-out criterion for an accessibility bug ticket?',
+    options: [
+      'Developer marks done after code merge',
+      'Validated by reproducible manual test steps, relevant AT checks, and regression verification',
+      'Issue no longer appears in screenshot',
+      'No customer has reported it this week'
+    ],
+    correctOption: 1,
+    explanation: 'Reliable closure requires evidence-based verification across intended user paths and assistive contexts.',
+    resource: 'Accessibility QA Verification Practices'
   }
 ]
